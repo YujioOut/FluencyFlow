@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vocabulary Table</title>
+    <title>Fluency Flow</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -58,7 +58,7 @@
             const tableBody = document.querySelector("#vocabTable tbody");
             tableBody.innerHTML = ""; // Clear the table
 
-            // Slice the data to show only the next 100 entries
+            // Determine which data to display
             const dataToDisplay = parsedData.slice(
               currentIndex,
               currentIndex + 100
@@ -71,39 +71,39 @@
               ? dataToDisplayForStudy
               : dataToDisplay;
 
+            // Populate the table
             dataToShow.forEach((entry, index) => {
-              // Create a new row every 10th word
               if (index % 10 === 0) {
                 row = document.createElement("tr");
                 tableBody.appendChild(row);
               }
 
-              // Create a table cell for Kanji, Kana, and English definition
               const td = document.createElement("td");
               td.innerHTML = `${entry.Kanji}<br>${entry.Kana}<br>${
                 entry.English
               }<br>${showRomaji ? entry.Romaji : ""}`;
 
-              // If this item is selected, make it green
               const entryId = currentIndex + index;
-              if (selectedItems[entryId]) {
+
+              // Only highlight in normal mode
+              if (!isStudyMode && selectedItems[entryId]) {
                 td.classList.add("selected");
               }
 
               td.addEventListener("click", () => {
-                // Toggle the selection
-                td.classList.toggle("selected");
-                if (td.classList.contains("selected")) {
-                  selectedItems[entryId] = entry; // Save the selected entry
-                } else {
-                  delete selectedItems[entryId]; // Remove from selected items
-                }
+                if (!isStudyMode) {
+                  td.classList.toggle("selected");
+                  if (td.classList.contains("selected")) {
+                    selectedItems[entryId] = entry;
+                  } else {
+                    delete selectedItems[entryId];
+                  }
 
-                // Save to localStorage
-                localStorage.setItem(
-                  "selectedItems",
-                  JSON.stringify(selectedItems)
-                );
+                  localStorage.setItem(
+                    "selectedItems",
+                    JSON.stringify(selectedItems)
+                  );
+                }
               });
 
               row.appendChild(td);
@@ -118,8 +118,8 @@
             .getElementById("nextButton")
             .addEventListener("click", () => {
               if (currentIndex + 100 < parsedData.length) {
-                currentIndex += 100; // Move to the next 100 items
-                renderTable(); // Re-render the table with the new data
+                currentIndex += 100;
+                renderTable();
               } else {
                 alert("No more data to display.");
               }
@@ -130,8 +130,8 @@
             .getElementById("prevButton")
             .addEventListener("click", () => {
               if (currentIndex - 100 >= 0) {
-                currentIndex -= 100; // Move to the previous 100 items
-                renderTable(); // Re-render the table with the new data
+                currentIndex -= 100;
+                renderTable();
               } else {
                 alert("You're already at the beginning of the data.");
               }
@@ -141,28 +141,28 @@
           document
             .getElementById("studyButton")
             .addEventListener("click", () => {
-              isStudyMode = !isStudyMode; // Toggle study mode
+              isStudyMode = !isStudyMode;
               document.getElementById("studyButton").textContent = isStudyMode
                 ? "Show All"
-                : "Study Mode"; // Update button text
-              renderTable(); // Re-render the table
+                : "Study Mode";
+              renderTable();
             });
 
           // Add event listener for the Reset button
           document
             .getElementById("resetButton")
             .addEventListener("click", () => {
-              localStorage.removeItem("selectedItems"); // Clear localStorage
-              selectedItems = {}; // Reset selectedItems
-              renderTable(); // Re-render the table
+              localStorage.removeItem("selectedItems");
+              selectedItems = {};
+              renderTable();
             });
 
           // Add event listener for the Romaji toggle button
           document
             .getElementById("toggleRomajiButton")
             .addEventListener("click", () => {
-              showRomaji = !showRomaji; // Toggle the Romaji visibility
-              renderTable(); // Re-render the table
+              showRomaji = !showRomaji;
+              renderTable();
             });
         })
         .catch((error) => console.error("Error loading the CSV file: ", error));
