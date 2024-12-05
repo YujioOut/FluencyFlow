@@ -96,3 +96,10 @@ button:focus {
 .toggle-romaji-button {
   margin-top: 10px;
 }
+
+body,
+table,
+td,
+th {
+  user-select: none;
+}
