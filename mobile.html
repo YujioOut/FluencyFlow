@@ -4,31 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluency Flow</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="mobile-styles.css" />
     <script>
-      // Check screen width on page load and redirect to mobile.html if on a mobile device
+      // Check screen width on page load and redirect to desktop version
       window.onload = () => {
-        if (window.innerWidth < 768) {
-          window.location.href = "mobile.html"; // Redirect to mobile version
+        if (window.innerWidth > 768) {
+          window.location.href = "index.html"; // Redirect to desktop version
         }
       };
     </script>
   </head>
   <body>
-    <h1>Fluency Flow</h1>
     <table id="vocabTable">
       <thead>
         <tr>
-          <th>一</th>
-          <th>二</th>
-          <th>三</th>
-          <th>四</th>
-          <th>五</th>
-          <th>六</th>
-          <th>七</th>
-          <th>八</th>
-          <th>九</th>
-          <th>十</th>
+          <th>Fluency</th>
+          <th>Flow</th>
         </tr>
       </thead>
       <tbody>
@@ -81,7 +72,7 @@
 
             // Populate the table
             dataToShow.forEach((entry, index) => {
-              if (index % 10 === 0) {
+              if (index % 2 === 0) {
                 row = document.createElement("tr");
                 tableBody.appendChild(row);
               }
