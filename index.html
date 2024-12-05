@@ -44,6 +44,12 @@
       <button class="toggle-romaji-button" id="toggleRomajiButton">
         Toggle Romaji
       </button>
+      <button class="toggle-kana-button" id="toggleKanaButton">
+        Toggle Kana
+      </button>
+      <button class="toggle-english-button" id="toggleEnglishButton">
+        Toggle English
+      </button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
@@ -53,12 +59,13 @@
         JSON.parse(localStorage.getItem("selectedItems")) || {}; // Stores selected items across pages
       let isStudyMode = false; // Tracks if we're in study mode
       let showRomaji = true; // Flag to control whether Romaji is shown
+      let showKana = true; // Flag to control whether Kana is shown
+      let showEnglish = true; // Flag to control whether English is shown
 
       // Load the CSV file
       fetch("vocab_list.csv")
         .then((response) => response.text())
         .then((csvText) => {
-          // Parse the CSV content
           const parsedData = Papa.parse(csvText, { header: true }).data;
 
           // Function to render the data
@@ -66,7 +73,6 @@
             const tableBody = document.querySelector("#vocabTable tbody");
             tableBody.innerHTML = ""; // Clear the table
 
-            // Determine which data to display
             const dataToDisplay = parsedData.slice(
               currentIndex,
               currentIndex + 100
@@ -79,7 +85,6 @@
               ? dataToDisplayForStudy
               : dataToDisplay;
 
-            // Populate the table
             dataToShow.forEach((entry, index) => {
               if (index % 10 === 0) {
                 row = document.createElement("tr");
@@ -87,13 +92,15 @@
               }
 
               const td = document.createElement("td");
-              td.innerHTML = `${entry.Kanji}<br>${entry.Kana}<br>${
-                entry.English
-              }<br>${showRomaji ? entry.Romaji : ""}`;
+              td.innerHTML = `
+          ${entry.Kanji}<br>
+          ${showKana ? entry.Kana : ""}<br>
+          ${showEnglish ? entry.English : ""}<br>
+          ${showRomaji ? entry.Romaji : ""}
+        `;
 
               const entryId = currentIndex + index;
 
-              // Only highlight in normal mode
               if (!isStudyMode && selectedItems[entryId]) {
                 td.classList.add("selected");
               }
@@ -121,7 +128,7 @@
           // Initial render
           renderTable();
 
-          // Add event listener for the Next button
+          // Event listeners for existing buttons
           document
             .getElementById("nextButton")
             .addEventListener("click", () => {
@@ -133,7 +140,6 @@
               }
             });
 
-          // Add event listener for the Previous button
           document
             .getElementById("prevButton")
             .addEventListener("click", () => {
@@ -145,7 +151,6 @@
               }
             });
 
-          // Add event listener for the Study button
           document
             .getElementById("studyButton")
             .addEventListener("click", () => {
@@ -156,7 +161,6 @@
               renderTable();
             });
 
-          // Add event listener for the Reset button
           document
             .getElementById("resetButton")
             .addEventListener("click", () => {
@@ -165,11 +169,27 @@
               renderTable();
             });
 
-          // Add event listener for the Romaji toggle button
+          // Event listener for Romaji toggle button
           document
             .getElementById("toggleRomajiButton")
             .addEventListener("click", () => {
               showRomaji = !showRomaji;
+              renderTable();
+            });
+
+          // Event listener for Kana toggle button
+          document
+            .getElementById("toggleKanaButton")
+            .addEventListener("click", () => {
+              showKana = !showKana;
+              renderTable();
+            });
+
+          // Event listener for English toggle button
+          document
+            .getElementById("toggleEnglishButton")
+            .addEventListener("click", () => {
+              showEnglish = !showEnglish;
               renderTable();
             });
         })
