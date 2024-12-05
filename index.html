@@ -4,80 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vocabulary Table</title>
-    <style>
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        table-layout: fixed;
-      }
-      table,
-      th,
-      td {
-        border: 1px solid black;
-      }
-      th,
-      td {
-        padding: 8px;
-        text-align: center;
-        width: 10%; /* Ensure it's a 10x10 grid */
-        word-wrap: break-word;
-        height: 80px; /* Adjust height for readability */
-      }
-      td {
-        cursor: pointer;
-      }
-      .selected {
-        background-color: lightgreen;
-      }
-
-      /* Button container for top-right positioning */
-      .button-container {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        display: flex;
-        gap: 10px;
-      }
-
-      /* Style for buttons */
-      .next-button,
-      .study-button,
-      .prev-button,
-      .reset-button,
-      .toggle-romaji-button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4caf50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .next-button:hover,
-      .prev-button:hover,
-      .study-button:hover,
-      .reset-button:hover,
-      .toggle-romaji-button:hover {
-        background-color: #45a049;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Vocabulary Table (10x10 Grid)</h1>
+    <h1>Fluency Flow</h1>
     <table id="vocabTable">
       <thead>
         <tr>
-          <th>Kanji</th>
-          <th>Kana</th>
-          <th>English</th>
-          <th>Kanji</th>
-          <th>Kana</th>
-          <th>English</th>
-          <th>Kanji</th>
-          <th>Kana</th>
-          <th>English</th>
-          <th>Kanji</th>
+          <th>一</th>
+          <th>二</th>
+          <th>三</th>
+          <th>四</th>
+          <th>五</th>
+          <th>六</th>
+          <th>七</th>
+          <th>八</th>
+          <th>九</th>
+          <th>十</th>
         </tr>
       </thead>
       <tbody>
