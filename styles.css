@@ -34,14 +34,17 @@ th,
 td {
   padding: 10px;
   text-align: center;
-  word-wrap: break-word;
-  height: 80px;
+  height: 100px; /* Increased row height */
+  overflow: hidden;
 }
 
 td {
   cursor: pointer;
   background-color: #ffffff;
   transition: background-color 0.3s ease;
+  font-size: 14px; /* Adjust font size to fit within cells */
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 td:hover {
