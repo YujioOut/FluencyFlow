@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
     <script>
       // Check screen width on page load and redirect to mobile.html if on a mobile device
-      window.onload = () => {
+      function checkForMobile() {
         if (window.innerWidth < 768) {
-          window.location.href = "mobile.html"; // Redirect to mobile version
+          window.location.href = "mobile.html";
         }
-      };
+      }
+
+      // Check screen width on page load and resize
+      window.onload = checkForMobile;
+      window.onresize = checkForMobile;
     </script>
   </head>
   <body>
