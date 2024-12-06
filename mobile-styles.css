@@ -49,7 +49,7 @@ td {
 }
 
 td:hover {
-  background-color: lightgreen;
+  /*background-color: lightgreen;*/
 }
 
 .selected {

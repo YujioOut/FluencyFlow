@@ -39,7 +39,7 @@ Kanji,Kana,English,Romaji
 本,ほん,book; origin,hon  
 今年,ことし,this year,kotoshi  
 よく,よく,frequently; often,yoku  
-彼女,かのじょ,she; her;kanojo  
+彼女,かのじょ,she; her, kanojo  
 どう,どう,how; in what way,dou  
 言葉,ことば,word; language; phrase,kotoba  
 顔,かお,face; expression,kao  
@@ -79,7 +79,7 @@ Kanji,Kana,English,Romaji
 教える,おしえる,to teach; to inform,oshieru  
 歩く,あるく,to walk,aruku 
 会う,あう,to meet; to encounter,au  
-書く,かく,to write;kaku  
+書く,かく,to write, kaku  
 頭,あたま,head; mind,atama  
 売る,うる,to sell,uru  
 大好き,だいすき,very fond of; love, daisuki  
@@ -909,11 +909,11 @@ Kanji,Kana,English,Romaji
 来月, らいげつ, next month, raigetsu
 日時, にちじ, date and time, nichiji
 夕方, ゆうがた, evening, yuugata
-通る, とおる, to pass; to go, to follow, to pass through, tooru
+通る, とおる, to pass; to go; to follow; to pass through, tooru
 自動車, じどうしゃ, automobile, jidousha
 慣れる, なれる, to get used to, nareru
 撮る, とる, to take (photo), toru
-やっと, やっと, at last, finally, yatto
+やっと, やっと, at last; finally, yatto
 どんどん, どんどん, rapidly; one after another, don-don
 並べる, ならべる, to line up; to arrange, naraberu
 逃げる, にげる, to escape; to flee, nigeru
@@ -1250,7 +1250,7 @@ Kanji,Kana,English,Romaji
 注射, ちゅうしゃ, injection, chuusha
 めったに, めったに, rarely, mettani
 作文, さくぶん, composition, sakubun
-鳴る, なる, to ring, to sound, naru
+鳴る, なる, to ring; to sound, naru
 真面目, まじめ, serious, majime
 申し込む, もうしこむ, to apply, moushikomu
 冷蔵庫, れいぞうこ, refrigerator, reizouko
@@ -1266,7 +1266,7 @@ Kanji,Kana,English,Romaji
 切符, きっぷ, ticket, kippu
 ゴム, ごむ, rubber, gomu
 少々, しょうしょう, a little, shoushou
-随分, ずいぶん, very, quite, zuibun
+随分, ずいぶん, very; quite, zuibun
 引っ張る, ひっぱる, to pull, hipparu
 焼ける, やける, to burn, yakeru
 鉛筆, えんぴつ, pencil, enpitsu
@@ -1290,8 +1290,8 @@ Kanji,Kana,English,Romaji
 皆さん, みなさん, everyone, minasan
 受ける, うける, to receive, ukeru
 付く, つく, to stick, tsuku
-私, わたし, I, me, watashi
-結構, けっこう, fine, good, kekkou
+私, わたし, I; (formal), watakushi
+結構, けっこう, fine; good, kekkou
 悪口, わるぐち, badmouthing, waruguchi
 広まる, ひろまる, to spread, hiromaru
 内緒, ないしょ, secret, naisho
@@ -2330,7 +2330,7 @@ Kanji,Kana,English,Romaji
 義理,ぎり,obligation; duty; sense of duty,giri  
 さっと,さっと,quickly; suddenly;satto  
 左利き,ひだりきき,left-handed,hidarikiki  
-サボる,さぼる,to skip (work, school, etc.); to slack off,saboru  
+サボる,さぼる,to skip (work; school; etc.) to slack off,saboru  
 だるい,だるい,sluggish; heavy; tired,darui  
 ポット,ぽっと,teapot; pot,potto  
 レントゲン,れんとげん,X-ray, rentogen  
@@ -2362,7 +2362,7 @@ Kanji,Kana,English,Romaji
 入力,にゅうりょく,entry; input,nyuuryoku  
 前回,ぜんかい,last time; previous time,zenkai  
 画面,がめん,screen; display,gamen  
-後半,こうはん,latter half;kouhan  
+後半,こうはん,latter half, kouhan  
 自信,じしん,confidence,jishin  
 素敵,すてき,lovely; wonderful;suteki  
 当たり前,あたりまえ,obvious; natural; common sense,atarimae  
@@ -2386,7 +2386,7 @@ Kanji,Kana,English,Romaji
 人数,にんずう,number of people; headcount,ninzuu  
 課長,かちょう,section chief; department head,kachou  
 ファッション,ふぁっしょん,fashion,fasshon  
-体調,たいちょう,physical condition;tai-chou  
+体調,たいちょう,physical condition, tai-chou  
 付き合う,つきあう,to associate with; to date; to keep company,tsukiau  
 ショッピング,しょっぴんぐ,shopping,shoppingu  
 あり,あり,existing; being present; with,ari  
@@ -2418,9 +2418,9 @@ Kanji,Kana,English,Romaji
 残業,ざんぎょう,overtime work,zangyou  
 曖昧,あいまい,vague; ambiguous;aima  
 カタログ,かたろぐ,brochure; catalog,katarogu  
-殴る,なぐる,to hit; to strike;naguru  
+殴る,なぐる,to hit; to strike, naguru  
 両手,りょうて,both hands,ryoute  
-仲良く,なかよく,get along well;nakayoku  
+仲良く,なかよく,get along well, nakayoku  
 始め,はじめ,beginning,hajime  
 知り合う,しりあう,to get acquainted with; to meet; to know each other,shiri-au  
 お手伝い,おてつだい,help; assistance; aid,otetsudai  
@@ -2435,7 +2435,7 @@ Kanji,Kana,English,Romaji
 せいぜい,せいぜい,at most; at best; only,seizei  
 後期,こうき,later period; latter term,kouki  
 エアコン,えあこん,air conditioner,ea-kon  
-ゆったり,ゆったり,relaxed; spacious;yuttari  
+ゆったり,ゆったり,relaxed; spacious, yuttari  
 ハードウェア,はーどううぇあ,hardware,ha-douwea  
 リクエスト,りくえすと,request,rikuesuto  
 翌年,よくねん,next year,yokunen  
@@ -2584,7 +2584,7 @@ Kanji,Kana,English,Romaji
 洗い物,あらいもの,dishes (to wash),araimono  
 かっと,かっと,to flare up; to get angry,katto  
 どきっと,どきっと,with a start; startled,dokitto  
-乗り遅れる,のりおくれる,to miss (a train, etc.),noriokureru  
+乗り遅れる,のりおくれる,to miss (a train; etc.),noriokureru  
 くたくた,くたくた,exhausted;knee-deep,kurataku  
 すべすべ,すべすべ,smooth; silky,subesube  
 にやにや,にやにや,grinning slyly,niyaniya  
@@ -2654,7 +2654,7 @@ Kanji,Kana,English,Romaji
 大喜び,おおよろこび,great joy,oo yorokobi  
 落とし物,おとしもの,lost item,otoshimono  
 じゃんじゃん,じゃんじゃん,freely; continuously,janjan  
-見違える,みちがえる,to be unrecognizable, or greatly improved,michigaeru  
+見違える,みちがえる,to be unrecognizable; or greatly improved,michigaeru  
 合理的,ごうりてき,logical; rational,gouriteki  
 自主的,じしゅてき,self-motivated; voluntary,jishuteki  
 全面的,ぜんめんてき,comprehensive; total,zenmenteki  
@@ -2663,8 +2663,8 @@ Kanji,Kana,English,Romaji
 日中,にっちゅう,daytime; Japan-China,nitchuu  
 明日,あした,tomorrow,ashita  
 結構,けっこう,quite; good,kekkou  
-辛い,つらい,painful;辛い(からい),spicy,tsurai; karai  
-まずい,まずい,unpleasant; bad,tasteless,mazui  
+辛い,つらい,painful; painstaiking,tsurai  
+まずい,まずい,unpleasant; bad; tasteless,mazui  
 上下,うえした,up and down,ueshita  
 生,なま,raw; life,nama  
 よける,よける,to avoid,yokeru  
@@ -2676,12 +2676,12 @@ Kanji,Kana,English,Romaji
 者,もの,person; thing,mono  
 中,なか,inside,naka  
 性,せい,gender; nature,se  
-会,かい,meeting;kai  
+会,かい,meeting,kai  
 事,こと,thing; matter,koto  
 今日,きょう,today,kyou  
 点,てん,point; mark,ten  
 バック,バック,back,akku  
-記事,きじ,article,news,kiji  
+記事,きじ,article;news,kiji  
 大,おお,large; big,oo  
 法,ほう,law,hou  
 非常,ひじょう,emergency; extraordinary,hijou  
@@ -2699,13 +2699,13 @@ Kanji,Kana,English,Romaji
 機会,きかい,opportunity,kikai  
 製品,せいひん,product,seihin  
 自身,じしん,self; confidence,jishin  
-かかる,かかる,to take (time, effort); this kind of,kakaru  
+かかる,かかる,to take (time; effort); this kind of,kakaru  
 求める,もとめる,to seek; to request,mo to meru  
 下さる,くださる,to give (humble),kudasaru  
 昨日,きのう,yesterday,kinou  
 元,もと,origin; former,moto  
 型,かた,model; type,kata  
-それぞれ,それぞれ,each,respectively,sorezore  
+それぞれ,それぞれ,each;respectively,sorezore  
 地方,ちほう,region; district,chi hou  
 面,めん,surface; face,men  
 実は,じつは,actually,jitsu wa  
@@ -2718,7 +2718,7 @@ Kanji,Kana,English,Romaji
 行動,こうどう,action; behavior,koudou  
 率,りつ,rate; ratio,ritsu  
 監督,かんとく,direction; supervision,kantoku  
-意識,いしき,consciousness,awareness,ishiki  
+意識,いしき,consciousness;awareness,ishiki  
 認める,みとめる,to recognize; to admit,mitomeru  
 参考,さんこう,reference,sankou  
 チーム,チーム,team,chiimu  
