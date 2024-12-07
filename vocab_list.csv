@@ -120,7 +120,7 @@ Kanji,Kana,English,Romaji
 冬,ふゆ,winter; cold season,fuyu  
 年,とし,year; age,toshi  
 重い,おもい,heavy; serious (illness),omoi  
-胸,むね,chest; heart;mune  
+胸,むね,chest; heart, mune  
 払う,はらう,to pay; to brush off,harau  
 軽い,かるい,light (weight); gentle,karui  
 見つける,みつける,to find; to discover,mitsukeru  
@@ -199,7 +199,7 @@ Kanji,Kana,English,Romaji
 親,おや,parent,oya  
 話す,はなす,to speak; to talk,hanasu  
 少し,すこし,a little, sukoshi  
-閉じる,とじる,to close (something), to shut,toji  
+閉じる,とじる,to close (something); to shut,toji  
 時,とき,time; moment,toki  
 米,こめ,rice (uncooked),kome  
 切る,きる,to cut,kiru  
@@ -506,7 +506,7 @@ Kanji,Kana,English,Romaji
 何,なに,what,nani  
 今朝,けさ,this morning,kesa  
 寿司,すし,sushi,sushi  
-履く,はく,to wear (shoes, pants),haku  
+履く,はく,to wear (shoes; pants),haku  
 おじさん,おじさん,uncle,ojisan  
 おばさん,おばさん,aunt,obasan  
 お祖母さん,おばあさん,grandmother,obaasan  
@@ -547,7 +547,7 @@ Kanji,Kana,English,Romaji
 山,やま,mountain,yama  
 橋,はし,bridge,hashi  
 止まる,とまる,to stop,tomaru  
-降る,ふる,to fall (rain, snow),furu  
+降る,ふる,to fall (rain; snow),furu  
 本当,ほんとう,true,hontou  
 町,まち,town,machi  
 お菓子,おかし,sweets,okashi  
@@ -675,7 +675,7 @@ Kanji,Kana,English,Romaji
 サービス,さーびす,service,saabisu  
 グループ,ぐるーぷ,group,guurupu  
 自宅,じたく,home,jitaku  
-家庭,かてい,family,home,kattei  
+家庭,かてい,family;home,kattei  
 期間,きかん,period,kikan  
 年度,ねんど,fiscal year,nendo  
 経験,けいけん,experience,keiken  
@@ -769,7 +769,7 @@ Kanji,Kana,English,Romaji
 コーヒー,こーひー,coffee,koohii  
 コップ,こっぷ,cup,koppu  
 二人,ふたり,two people,futari  
-止む,やむ,to stop (rain, snow),yamu  
+止む,やむ,to stop (rain; snow),yamu  
 九,きゅう,nine,kyuu  
 昼間,ひるま,daytime,hiru ma  
 いつ頃,いつごろ,about when,itsugoro  
@@ -1900,22 +1900,22 @@ Kanji,Kana,English,Romaji
 元旦,がんたん,New Year's Day (morning),gantan  
 柔らかい,やわらかい,soft; tender; gentle,yawarakai  
 似合う,にあう,to suit; to match; to look good on,niau  
-確かめる,たしかめる,to confirm; to verify;tashikameru  
+確かめる,たしかめる,to confirm; to verify,tashikameru  
 背中,せなか,back (of the body); spine,senaka  
 肌,はだ,skin; surface; texture,hada  
 順番,じゅんばん,order; turn (in line),junban  
-まとも,decent; proper; straightforward,matomo  
-ぴったり,perfectly; exactly; snugly,pittari  
+まとも,まとも,decent; proper; straightforward,matomo  
+ぴったり,ぴったり,perfectly; exactly; snugly,pittari  
 思わず,おもわず,unintentionally; reflexively; involuntarily,omowazu  
 より,より,more; rather; from (comparison),yori  
-もったいない,もったいない,wasteful; a shame;mottainai  
-情報,じょうほう,information; news;jouhou  
-諦める,あきらめる,to give up; to abandon;akirameru  
-懐かしい,なつかしい,nostalgic; dear;natsukashii  
-怪しい,あやしい,suspicious; dubious;ayashii  
-示す,しめす,to show; to indicate;shimesu  
-たっぷり,ample; plenty; enough;tappuri  
-早速,さっそく,immediately; at once;sassoku  
+もったいない,もったいない,wasteful; a shame,mottainai  
+情報,じょうほう,information; news,jouhou  
+諦める,あきらめる,to give up; to abandon,akirameru  
+懐かしい,なつかしい,nostalgic; dear,natsukashii  
+怪しい,あやしい,suspicious; dubious,ayashii  
+示す,しめす,to show; to indicate,shimesu  
+たっぷり,たっぷり,ample; plenty; enough,tappuri  
+早速,さっそく,immediately; at once,sassoku  
 偶然,ぐうぜん,by chance; coincidence;unexpectedly,guuzen  
 続き,つづき,continuation; sequel; next,tsuzuki  
 合計,ごうけい,total; sum; amount,goukei  
@@ -1924,26 +1924,26 @@ Kanji,Kana,English,Romaji
 具合,ぐあい,condition; state; health; circumstance,guai  
 中止,ちゅうし,cancellation; suspension; stoppage,chuushi  
 手続き,てつづき,procedure; process,tetsuzuki  
-結果,けっか,result; outcome;kekka  
-建設,けんせつ,construction; building;kensetsu  
-販売,はんばい,sale; selling; marketing;hanbai  
+結果,けっか,result; outcome,kekka  
+建設,けんせつ,construction; building,kensetsu  
+販売,はんばい,sale; selling; marketing,hanbai  
 機能,きのう,function; feature; capability,kinou  
 頃,ころ,time; around; approximately,koro  
-日中,にっちゅう,daytime; during the day;nichuu  
+日中,にっちゅう,daytime; during the day,nichuu  
 今後,こんご,from now on; hereafter,kongo  
 影響,えいきょう,influence; impact; effect,eikyou  
 分野,ぶんや,field; area; division,bunya  
-関する,かんする,related to; concerning;kansuru  
+関する,かんする,related to; concerning,kansuru  
 状態,じょうたい,condition; state; status,joutai  
-価格,かかく,price; cost;kakaku  
+価格,かかく,price; cost,kakaku  
 姿,すがた,figure; appearance; form,sugata  
 期待,きたい,expectation; hope; anticipation,kitai  
 除く,のぞく,to exclude; to remove; to take away,nozoku  
 一般,いっぱん,general; common; usual; universal,ippan  
 表現,ひょうげん,expression; representation,hyougen  
 完成,かんせい,completion; perfection; accomplishment,kansei  
-変化,へんか,change; transformation;henka  
-参加,さんか,participation; attendance;sanka  
+変化,へんか,change; transformation,henka  
+参加,さんか,participation; attendance,sanka  
 土地,とち,land; soil; property,tochi  
 検討,けんとう,consideration; examination;kentou  
 開始,かいし,start; commencement; beginning,kaishi  
@@ -1951,13 +1951,13 @@ Kanji,Kana,English,Romaji
 内容,ないよう,contents; substance; details,naiyou  
 与える,あたえる,to give; to grant; to bestow,ataeru  
 広がる,ひろがる,to spread; to extend; to expand,hirogaru  
-事実,じじつ,fact; reality;jijitsu  
-決定,けってい,decision; determination;kettei  
-住宅,じゅうたく,residence; housing;jyuutaku  
+事実,じじつ,fact; reality,jijitsu  
+決定,けってい,decision; determination,kettei  
+住宅,じゅうたく,residence; housing,jyuutaku  
 代表,だいひょう,representative; delegation; proxy,daihyou  
 命令,めいれい,command; order; decree,meirei  
 立場,たちば,position; standpoint; situation,tachiba  
-なお,furthermore; still; in addition,nao  
+なお,なお,furthermore; still; in addition,nao  
 計算,けいさん,calculation; computation; reckoning,keisan  
 可能,かのう,possible; feasible; potential,kanou  
 報告,ほうこく,report; information; statement,houkoku  
@@ -1965,11 +1965,11 @@ Kanji,Kana,English,Romaji
 政治,せいじ,politics; government; administration,seiji  
 競争,きょうそう,competition; contest; rivalry,kyousou  
 原因,げんいん,cause; origin; source,genin  
-活動,かつどう,activity; action;katsudou  
+活動,かつどう,activity; action,katsudou  
 歴史,れきし,history; past events,reikishi  
 表,おもて,surface; front; exterior,omote  
 サイト,サイト,site (website); location; place,saito  
-土産,みやげ,souvenir; gift;miyage  
+土産,みやげ,souvenir; gift,miyage  
 臭い,におい,smell; odor (pleasant or unpleasant),nioi  
 現金,げんきん,cash; ready money,genkin  
 虫,むし,insect; bug; worm,mushi  
@@ -1995,7 +1995,7 @@ Kanji,Kana,English,Romaji
 転勤,てんきん,job transfer; relocation; transfer (to a different office),tenkin  
 政府,せいふ,government; administration,seifu  
 所有,しょゆう,ownership; possession; property,shoyuu  
-いずれ,eventually; someday; sooner or later,izure  
+いずれ,いずれ,eventually; someday; sooner or later,izure  
 対する,たいする,towards; regarding; in relation to,taisuru  
 教会,きょうかい,church; Christian church,kyoukai  
 ご存知,ごぞんじ,knowing (polite form); being aware of; familiarity,gozonji  
@@ -2004,20 +2004,20 @@ Kanji,Kana,English,Romaji
 残り,のこり,remaining; leftover; balance,nokori  
 戻す,もどす,to return; to put back; to restore,modosu  
 体重,たいじゅう,body weight; weight,taiyuu  
-どうせ,anyway; in any case; after all,douse  
-あれこれ,various things; this and that,arekore  
+どうせ,どうせ,anyway; in any case; after all,douse  
+あれこれ,あれこれ,various things; this and that,arekore  
 湖,みずうみ,lake,mizuumi  
-とうとう,finally; at last; in the end,toutou  
+とうとう, とうとう, finally; at last; in the end,toutou  
 負け,まけ,defeat; loss; failure,make  
 悔しい,くやしい,frustrating; vexing; regrettable,kurayashii  
 姉妹,しまい,sisters; siblings,shimai  
 助かる,たすかる,to be saved; to be helped,tasukaru  
 手前,てまえ,this side; the front; one's own responsibility,temae  
-さっぱり,refreshing; clean; neat; not at all,sappari  
-ついで,in the process; incidentally; on the way,tsuide  
-すっきり,neat; tidy; clear; refreshed,sukkiri  
-とんでもない,unthinkable; outrageous; absurd; no way,tondemonai  
-坂,さか,hill; slope;saka  
+さっぱり, さっぱり, refreshing; clean; neat; not at all,sappari  
+ついで, ついで, in the process; incidentally; on the way,tsuide  
+すっきり,すっきり, neat; tidy; clear; refreshed,sukkiri  
+とんでもない, とんでもない, unthinkable; outrageous; absurd; no way,tondemonai  
+坂,さか,hill; slope,saka  
 飛び込む,とびこむ,to jump in; to dive in; to rush into,tobikomu  
 コメント,コメント,comment; remark; feedback,komento  
 書き直す,かきなおす,to rewrite; to revise;kakinaosu  
@@ -2029,12 +2029,12 @@ Kanji,Kana,English,Romaji
 見学,けんがく,sightseeing; study visit; tour,kengaku  
 進学,しんがく,advancing to a higher level of school,shingaku  
 退院,たいいん,discharging from the hospital,taiin  
-テント,tent; camping tent,tento  
+テント,テント,tent; camping tent,tento  
 踊り,おどり,dance,odori  
 植える,うえる,to plant; to grow; to establish,ueru  
 幼稚園,ようちえん,kindergarten,youchien  
 エアメール,エアメール,airmail; airmail,eamairu  
-四季,しき,four seasons; seasonal changes; seasons; shiki  
+四季,しき,four seasons; seasonal changes; seasons, shiki  
 ナイロン,ナイロン,nylon,nairon  
 消防車,しょうぼうしゃ,fire engine; fire truck,shoubousha  
 ハンドバッグ,ハンドバッグ,handbag; purse; bag,handobaggu  
@@ -2055,7 +2055,7 @@ Kanji,Kana,English,Romaji
 傾向,けいこう,tendency; trend; inclination,keikou  
 契約,けいやく,contract; agreement,keiyaku  
 産業,さんぎょう,industry,sangyou  
-事情,じじょう,circumstances; situation;jijou  
+事情,じじょう,circumstances; situation,jijou  
 実行,じっこう,execution; implementation; practice,jikkou  
 組織,そしき,organization;soshiki  
 逮捕,たいほ,arrest; capture,taiho  
@@ -2079,11 +2079,11 @@ Kanji,Kana,English,Romaji
 生産,せいさん,production; manufacture,seisan  
 管理,かんり,management; administration,kanri  
 増加,ぞうか,increase; addition; growth,zouka  
-特徴,とくちょう,feature; characteristic;tokuchou  
-強調,きょうちょう,emphasis; stress;kyoucho  
+特徴,とくちょう,feature; characteristic,tokuchou  
+強調,きょうちょう,emphasis; stress,kyoucho  
 制度,せいど,system; institution; organization; regulation,seido  
-株,かぶ,stock; share;kabu  
-加える,くわえる,to add; to include;kuaeru  
+株,かぶ,stock; share,kabu  
+加える,くわえる,to add; to include,kuaeru  
 強化,きょうか,reinforcement; strengthening; enhancement; intensification,kyouka  
 設計,せっけい,design; plan; layout; drafting; construction,sekkei  
 段階,だんかい,stage; phase; level; step; grade,dankai  
@@ -2168,7 +2168,7 @@ Kanji,Kana,English,Romaji
 フライパン,ふらいぱん,frying pan,furaipan  
 一人一人,ひとりひとり,one by one; each person,ひとりひとり  
 話し掛ける,はなしかける,to speak to; to address; to talk to,hanashikakeru  
-追い掛ける,おいかける,to chase; to pursue;oikakeru  
+追い掛ける,おいかける,to chase; to pursue,oikakeru  
 小指,こゆび,little finger; pinky,ko-yubi  
 ぴかぴか,ぴかぴか,shiny; sparkling; glittering,pikapika  
 中指,なかゆび,ring finger; middle finger,nakayubi  
@@ -2194,7 +2194,7 @@ Kanji,Kana,English,Romaji
 いらいら,いらいら,feeling irritated; feeling impatient; being frustrated,iraira  
 薬指,くすりゆび,ring finger; 4th finger,kusuriyubi  
 のろのろ,のろのろ,slowly; sluggishly; slowly moving,noronoro  
-ポイント,ぽいんと,point (score, location, etc.),pointo  
+ポイント,ぽいんと,point (score; location, etc.),pointo  
 工業,こうぎょう,industry; manufacturing,kougyou  
 構造,こうぞう,structure; construction;kouzou  
 さすが,さすが,as expected; just as one would expect; admirable,sasuga  
@@ -2231,7 +2231,7 @@ Kanji,Kana,English,Romaji
 データ,でーた,data,dee-ta  
 購入,こうにゅう,purchase; buying,kounyuu  
 ビジネス,びじねす,business,bijinesu  
-俺,おれ,I; me (masculine, informal),ore  
+俺,おれ,I; me (masculine; informal),ore  
 登録,とうろく,registration; signing up,touroku  
 体験,たいけん,personal experience; hands-on experience,taiken  
 デザイン,でざいん,design,dezain  
@@ -2247,7 +2247,7 @@ Kanji,Kana,English,Romaji
 ケース,けーす,case; box; situation,ke-su  
 メーカー,めーかー,manufacturer; maker,me-ka  
 治療,ちりょう,treatment; therapy,chiryou  
-読者,どくしゃ,reader (of books, magazines),dokusha  
+読者,どくしゃ,reader (of books; magazines),dokusha  
 職員,しょくいん,staff; employee; worker,shokuin  
 世代,せだい,generation; age group,sedai  
 視点,してん,point of view; perspective; viewpoint,shiten  
@@ -2277,21 +2277,21 @@ Kanji,Kana,English,Romaji
 犠牲,ぎせい,sacrifice; victim,gisei  
 暴力,ぼうりょく,violence; force,bouryoku  
 赤字,あかじ,deficit; loss; red ink,akaji  
-個性,こせい,personality; individuality;kosei  
-作戦,さくせん,plan; strategy;sakusen  
+個性,こせい,personality; individuality,kosei  
+作戦,さくせん,plan; strategy,sakusen  
 ショック,しょっく,shock; impact; surprise,shokku  
 アンケート,あんけーと,survey; questionnaire,anke-to  
 わざわざ,わざわざ,expressly; doing something deliberately; going out of one’s way,wazawaza  
 本気,ほんき,seriousness; earnestness,honki  
 悩み,なやみ,problem; worry; trouble,nayami  
-上司,じょうし,superior; boss;joushi  
+上司,じょうし,superior; boss,joushi  
 説得,せっとく,persuasion; conviction,settoku  
 ブーム,ぶーむ,boom; fad; craze,bu-mu  
 体力,たいりょく,physical strength; stamina,tairyoku  
 正常,せいじょう,normal; regular; sound,sei jou  
 ヒント,ひんと,hint; clue,hinto  
-地獄,じごく,hell;jigoku  
-後悔,こうかい,regret;koukai  
+地獄,じごく,hell,jigoku  
+後悔,こうかい,regret,koukai  
 情熱,じょうねつ,passion; enthusiasm,jounetsu  
 驚き,おどろき,surprise; astonishment,odoroki  
 ジャンプ,じゃんぷ,jump; leap,jampu  
@@ -2303,10 +2303,10 @@ Kanji,Kana,English,Romaji
 青春,せいしゅん,youth;青春時代 (youthful years),seishun  
 あっさり,あっさり,easily; simply; lightly,assari  
 焦る,あせる,to hurry; to be impatient; to get flustered,aseru  
-柔軟,じゅうなん,flexible; pliable;jun'nan  
-タレント,たれんと,talent; celebrity;tare-n-to  
+柔軟,じゅうなん,flexible; pliable,jun'nan  
+タレント,たれんと,talent; celebrity,tare-n-to  
 どうにか,どうにか,by some means; somehow; in one way or another,donika  
-コンテスト,こんてすと,contest;kontesuto  
+コンテスト,こんてすと,contest,kontesuto  
 もてる,もてる,to be popular (romantically); to be charming,moteru  
 デザート,でざーと,dessert,dezato  
 クイズ,くいず,quiz,kuizu  
@@ -2314,7 +2314,7 @@ Kanji,Kana,English,Romaji
 ムード,むーど,mood; atmosphere,mu-do  
 同情,どうじょう,sympathy; compassion,doujou  
 学歴,がくれき,academic background, gakureki  
-好調,こうちょう,good condition; favorable;kouchou  
+好調,こうちょう,good condition; favorable,kouchou  
 アマチュア,あまちゅあ,amateur,amachua  
 炒める,いためる,to fry; to stir-fry,itameru  
 カメラマン,かめらまん,photographer; cameraman,kameraman  
@@ -2325,7 +2325,7 @@ Kanji,Kana,English,Romaji
 パンク,ぱんく,punk; flat tire; broken,panku  
 コマーシャル,こまーしゃる,commercial (advertisement),koma-sharu  
 チェンジ,ちぇんじ,change,chenji  
-待ち合わせ,まちあわせ,meeting; appointment;machi-awase  
+待ち合わせ,まちあわせ,meeting; appointment,machi-awase  
 時差,じさ,time difference,jisa  
 義理,ぎり,obligation; duty; sense of duty,giri  
 さっと,さっと,quickly; suddenly;satto  
@@ -2338,7 +2338,7 @@ Kanji,Kana,English,Romaji
 無駄遣い,むだづかい,wasteful spending; squandering,mudazukai  
 バッジ,ばっじ,badge,bajji  
 眼科,がんか,ophthalmology; eye clinic,ganka  
-履歴書,りれきしょ,resume; CV; personal history; rirekisho  
+履歴書,りれきしょ,resume; CV; personal history, rirekisho  
 インフレーション,いんふれーしょん,inflation,infre-shon  
 癌,がん,cancer; malignancy,gan  
 ぺこぺこ,ぺこぺこ,hungry; bowing in humility; being polite or submissive,pekopko  
@@ -2364,14 +2364,14 @@ Kanji,Kana,English,Romaji
 画面,がめん,screen; display,gamen  
 後半,こうはん,latter half, kouhan  
 自信,じしん,confidence,jishin  
-素敵,すてき,lovely; wonderful;suteki  
+素敵,すてき,lovely; wonderful,suteki  
 当たり前,あたりまえ,obvious; natural; common sense,atarimae  
 やり方,やりかた,way of doing; method; manner,yarikata  
 わずか,わずか,only; mere; small,wazuka  
 ついに,ついに,eventually; at last; finally,tsuini  
 次回,じかい,next time,jikai  
 スピード,すぴーど,speed,supi-do  
-バイト,ばいと,part-time job;baito  
+バイト,ばいと,part-time job,baito  
 不可能,ふかのう,impossible,fukanou  
 アドバイス,あどばいす,advice,adobaisu  
 落ち着く,おちつく,to calm down; to settle down,ochitsuku  
@@ -2380,7 +2380,7 @@ Kanji,Kana,English,Romaji
 大手,おおて,large company; major firm; big business,oute  
 部長,ぶちょう,department head; director,buchou  
 前半,ぜんはん,first half; first part,zenhan  
-たまたま,たまたま,by chance; accidentally;偶然,tamatama  
+たまたま,たまたま,by chance; accidentally,tamatama  
 相変わらず,あいかわらず,as usual; as ever,aikawarazu  
 支払い,しはらい,payment; paying; settlement,shiharai  
 人数,にんずう,number of people; headcount,ninzuu  
