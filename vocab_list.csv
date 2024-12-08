@@ -337,7 +337,7 @@ Kanji,Kana,English,Romaji
 答える,こたえる,to answer,kotaeru  
 先,さき,previous, saki  
 寒い,さむい,cold,samui  
-四,し,four,shi  
+四,よん,four,yon
 三日,みっか,third day of the month,mikka  
 下,した,down,shita  
 大丈夫,だいじょうぶ,okay,daijoubu  
@@ -372,7 +372,7 @@ Kanji,Kana,English,Romaji
 八つ,やっつ,eight things,yattsu  
 止める,とめる,to stop,tomeru  
 四日,よっか,fourth day of the month,yokka  
-夜,よる,night,yoru  
+夜,よる,night (from sunset to sunrise),yoru  
 来年,らいねん,next year,rainen  
 六,ろく,six,roku  
 悪い,わるい,bad,warui  
@@ -503,7 +503,7 @@ Kanji,Kana,English,Romaji
 夜中,よなか,midnight,yonaka  
 来週,らいしゅう,next week,raishuu  
 誰か,だれか,someone,dareka  
-何,なに,what,nani  
+何,なん,what,nan 
 今朝,けさ,this morning,kesa  
 寿司,すし,sushi,sushi  
 履く,はく,to wear (shoes; pants),haku  
@@ -1232,7 +1232,7 @@ Kanji,Kana,English,Romaji
 油, あぶら, oil, abura
 おかしい, おかしい, strange, okashii
 余る, あまる, to be left over, amaru
-コート, こーと, coat, kooto
+コート, こーと, sports court (tennis; basketball), ko-to
 正直, しょうじき, honest, shoujiki
 ドラマ, どらま, drama, dorama
 ビザ, びざ, visa, biza
@@ -2194,7 +2194,7 @@ Kanji,Kana,English,Romaji
 いらいら,いらいら,feeling irritated; feeling impatient; being frustrated,iraira  
 薬指,くすりゆび,ring finger; 4th finger,kusuriyubi  
 のろのろ,のろのろ,slowly; sluggishly; slowly moving,noronoro  
-ポイント,ぽいんと,point (score; location, etc.),pointo  
+ポイント,ぽいんと,point (score; location; etc.),pointo  
 工業,こうぎょう,industry; manufacturing,kougyou  
 構造,こうぞう,structure; construction;kouzou  
 さすが,さすが,as expected; just as one would expect; admirable,sasuga  
@@ -2661,7 +2661,7 @@ Kanji,Kana,English,Romaji
 円高,えんだか,strong yen,endaka  
 消費者,しょうひしゃ,consumer,shouhisha  
 日中,にっちゅう,daytime; Japan-China,nitchuu  
-明日,あした,tomorrow,ashita  
+明日,あす,tomorrow (rather formal),asu 
 結構,けっこう,quite; good,kekkou  
 辛い,つらい,painful; painstaiking,tsurai  
 まずい,まずい,unpleasant; bad; tasteless,mazui  
@@ -2674,7 +2674,7 @@ Kanji,Kana,English,Romaji
 新聞社,しんぶんしゃ,newspaper company,shinbunsha  
 寝かす,ねかす,to put to bed,nekasu  
 者,もの,person; thing,mono  
-中,なか,inside,naka  
+中,ちゅう,middle; medium sized, chuu  
 性,せい,gender; nature,se  
 会,かい,meeting,kai  
 事,こと,thing; matter,koto  
@@ -2702,14 +2702,14 @@ Kanji,Kana,English,Romaji
 かかる,かかる,to take (time; effort); this kind of,kakaru  
 求める,もとめる,to seek; to request,mo to meru  
 下さる,くださる,to give (humble),kudasaru  
-昨日,きのう,yesterday,kinou  
+昨日,さくじつ,yesterday(formal),sakujitsu  
 元,もと,origin; former,moto  
 型,かた,model; type,kata  
 それぞれ,それぞれ,each;respectively,sorezore  
 地方,ちほう,region; district,chi hou  
 面,めん,surface; face,men  
 実は,じつは,actually,jitsu wa  
-夜,よる,night,yoru  
+夜,よる,night; evening,yoru  
 地,ち,earth; land,chi  
 議論,ぎろん,discussion; argument,giron  
 以前,いぜん,ago; before,izen  
@@ -2739,7 +2739,7 @@ Kanji,Kana,English,Romaji
 レベル,レベル,level,reberu  
 我々,われわれ,we (humble),wareware  
 指導,しどう,leadership; guidance,shidou  
-明日,あした,tomorrow,ashita  
+明日,みょうにち,tomorrow(very formal),myounichi
 資料,しりょう,data; materials,shiryou  
 団体,だんたい,organization,dantai  
 最も,もっとも,most; extremely,mottomo  
@@ -2997,4 +2997,4 @@ Kanji,Kana,English,Romaji
 連続, れんぞく, sequence, renzoku  
 機関, きかん, institution, kikan  
 論, ろん, argument, ron  
-島, しま, island, shima
+島, とう, island, tou
