@@ -5,11 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluency Flow</title>
     <link rel="stylesheet" href="styles.css" />
+
     <style>
       @media print {
+        @page {
+          margin: 0; /* Removes default page margins */
+        }
+
+        body {
+          font-family: Arial, sans-serif; /* Change to a clean, legible font */
+          font-size: 12pt; /* Standard size for printed documents */
+          line-height: 1.5; /* Improves readability */
+          color: #000; /* Ensure text is fully black for better contrast */
+        }
+
         thead {
-          display: none;
-        } /* Hide the table header in print view */
+          display: none; /* Keeps the header visible on every page */
+        }
+
+        tr {
+          page-break-inside: avoid; /* Prevents rows from splitting across pages */
+        }
+
+        table {
+          width: 100%; /* Ensures the table uses the full width of the page */
+          border-collapse: collapse; /* Reduces unnecessary spacing in the table */
+        }
+
+        td {
+          padding: 2px; /* Adds consistent spacing within cells for better readability */
+        }
+
+        /* Hide buttons and other unnecessary elements when printing */
+        .button-container,
+        button {
+          display: none; /* Hides all buttons */
+        }
       }
     </style>
     <script>
