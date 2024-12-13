@@ -1380,7 +1380,7 @@ Kanji,Kana,English,Romaji
 大会,たいかい,tournament; large meeting,taikai  
 背景,はいけい,background; scenery; context,haikei  
 文字,もじ,character; written symbol,moji  
-規則,きそく,rule; regulation;kisoku  
+規則,きそく,rule; regulation, kisoku  
 近所,きんじょ,neighborhood; nearby area,kinjo  
 グラフ,ぐらふ,graph; chart; visual data,gurafu  
 首都,しゅと,capital city; main city,shuto  
@@ -1664,7 +1664,7 @@ Kanji,Kana,English,Romaji
 鍋,なべ,pot; cooking utensil,nabe  
 寝坊,ねぼう,oversleeping; late riser,nebou  
 鋏,はさみ,scissors; cutting tool,hasami  
-真っ青,まっさお,deep blue; pale;massa  
+真っ青,まっさお,deep blue; pale, massa  
 汚す,よごす,to dirty; to soil,yogosu  
 忘れ物,わすれもの,forgotten item; lost property,wasuremono  
 掛け算,かけざん,multiplication; arithmetic,kakezan  
@@ -1677,7 +1677,7 @@ Kanji,Kana,English,Romaji
 あめ,あめ,candy; sweet; rain,ame  
 上り,のぼり,ascent; going up,nobori  
 なるべく,なるべく,as much as possible,narubeku  
-じっと,じっと,still; motionless;jitto  
+じっと,じっと,still; motionless, jitto  
 食器,しょっき,dishware; utensils,shokki  
 延ばす,のばす,to extend; to stretch,nobasu  
 薬局,やっきょく,pharmacy; drugstore,yakkyoku  
@@ -1732,7 +1732,7 @@ Kanji,Kana,English,Romaji
 掃く,はく,to sweep; to brush,haku  
 何しろ,なにしろ,anyhow; in any case,nanishiro  
 どんどん,どんどん,rapidly; continuously,dondon  
-ぺこぺこ,ぺこぺこ,very hungry; bowing repeatedly,pekop  
+ぺこぺこ,ぺこぺこ,very hungry; bowing repeatedly,pekopeko 
 ぺらぺら,ぺらぺら,fluent; thin; flimsy,perapera  
 レインコート,れいんこーと,raincoat; waterproof coat,reinkooto  
 アイス,あいす,ice cream; ice,aisu  
@@ -1801,7 +1801,7 @@ Kanji,Kana,English,Romaji
 あんまり,あんまり,(not) very; (not) much; excessive,anmari  
 いきなり,いきなり,suddenly; abruptly; without warning,ikinari  
 表,おもて,front; surface; exterior,omote  
-汚れ,よごれ,dirt; stain;yogore  
+汚れ,よごれ,dirt; stain, yogore  
 間,あいだ,space; interval; between,aida  
 紫,むらさき,purple; violet,murasaki  
 灰色,はいいろ,gray; ash color,haiiro  
@@ -1833,7 +1833,7 @@ Kanji,Kana,English,Romaji
 缶,かん,can; tin,kan  
 とんとん,とんとん,tapping sound; evenly matched,ton-ton  
 袖,そで,sleeve,sode  
-濡れる,ぬれる,to get wet;nureru  
+濡れる,ぬれる,to get wet,nureru  
 パーセント,ぱーせんと,percent,pāsento  
 上がる,あがる,to rise; to go up,agaru  
 拍手,はくしゅ,applause; clapping,hakushu  
@@ -1844,7 +1844,7 @@ Kanji,Kana,English,Romaji
 まく,まく,to scatter; to sow,maku  
 姪,めい,niece,mei  
 個人,こじん,individual; personal,kojin  
-歌手,かしゅ,singer;kashu  
+歌手,かしゅ,singer, kashu  
 社員,しゃいん,company employee,shain  
 不動産屋,ふどうさんや,real estate agent,fudousanya  
 最大,さいだい,maximum; largest,saidai  
@@ -1945,7 +1945,7 @@ Kanji,Kana,English,Romaji
 変化,へんか,change; transformation,henka  
 参加,さんか,participation; attendance,sanka  
 土地,とち,land; soil; property,tochi  
-検討,けんとう,consideration; examination;kentou  
+検討,けんとう,consideration; examination,kentou  
 開始,かいし,start; commencement; beginning,kaishi  
 備える,そなえる,to prepare for; to equip; to furnish,sonaeru  
 内容,ないよう,contents; substance; details,naiyou  
@@ -1978,7 +1978,7 @@ Kanji,Kana,English,Romaji
 帰宅,きたく,returning home; going home,kitaku  
 重大,じゅうだい,serious; important; significant,juudai  
 マイナス,マイナス,minus; negative; drawback,mainasu  
-稼ぐ,かせぐ,to earn; to make money;kasegu  
+稼ぐ,かせぐ,to earn; to make money, kasegu  
 左右,さゆう,left and right; influence; control,sayuu  
 痛み,いたみ,pain; ache; distress,itami  
 誤解,ごかい,misunderstanding; misinterpretation,gokai  
