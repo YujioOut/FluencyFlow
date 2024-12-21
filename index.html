@@ -59,7 +59,7 @@
       const exportToCSV = () => {
         const selectedData = Object.values(selectedItems);
         if (selectedData.length === 0) {
-          alert("No known words to export.");
+          alert("No selected words to export.");
           return;
         }
 
@@ -85,7 +85,7 @@
 
         const link = document.createElement("a");
         link.href = url;
-        link.download = "known_words.csv";
+        link.download = "selected_words.csv";
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
@@ -130,7 +130,7 @@
         Toggle English
       </button>
       <button class="export-button" id="exportButton">
-        Export Known Words
+        Export Selected Words
       </button>
       <!-- Add this new button -->
       <!-- <button class="search-mode-button" id="searchModeButton">Search Mode</button> -->
