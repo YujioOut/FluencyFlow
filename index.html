@@ -54,6 +54,42 @@
       // Check screen width on page load and resize
       window.onload = checkForMobile;
       window.onresize = checkForMobile;
+
+      // The exportToCSV function
+      const exportToCSV = () => {
+        const selectedData = Object.values(selectedItems);
+        if (selectedData.length === 0) {
+          alert("No known words to export.");
+          return;
+        }
+
+        // Ensure each entry has Kanji, Kana, English, and Romaji
+        const csvHeader = "Kanji,Kana,English,Romaji\n";
+        const csvRows = selectedData
+          .map((entry) => {
+            const kanji = entry.Kanji || "";
+            const kana = entry.Kana || "";
+            const english = entry.English || "";
+            const romaji = entry.Romaji || "";
+            return `${kanji},${kana},${english},${romaji}`;
+          })
+          .join("\n");
+
+        const csvContent = csvHeader + csvRows;
+
+        // Create and download the CSV
+        const blob = new Blob([csvContent], {
+          type: "text/csv;charset=utf-8;",
+        });
+        const url = URL.createObjectURL(blob);
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.download = "known_words.csv";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
     </script>
   </head>
   <body>
@@ -92,6 +128,9 @@
       </button>
       <button class="toggle-english-button" id="toggleEnglishButton">
         Toggle English
+      </button>
+      <button class="export-button" id="exportButton">
+        Export Known Words
       </button>
       <!-- Add this new button -->
       <!-- <button class="search-mode-button" id="searchModeButton">Search Mode</button> -->
@@ -138,11 +177,11 @@
 
               const td = document.createElement("td");
               td.innerHTML = `
-          ${entry.Kanji}<br>
-          ${showKana ? entry.Kana : ""}<br>
-          ${showEnglish ? entry.English : ""}<br>
-          ${showRomaji ? entry.Romaji : ""}
-        `;
+                ${entry.Kanji}<br>
+                ${showKana ? entry.Kana : ""}<br>
+                ${showEnglish ? entry.English : ""}<br>
+                ${showRomaji ? entry.Romaji : ""}
+              `;
 
               const entryId = currentIndex + index;
 
@@ -229,6 +268,10 @@
               showKana = !showKana;
               renderTable();
             });
+          // Attach the export function to the export button
+          document
+            .getElementById("exportButton")
+            .addEventListener("click", exportToCSV);
 
           // Event listener for English toggle button
           document
