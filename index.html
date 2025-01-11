@@ -51,6 +51,10 @@
         }
       }
 
+      function updateCurrentIndex(currentIndex) {
+        document.getElementById("current-index").textContent = currentIndex + 1;
+      }
+
       // Check screen width on page load and resize
       window.onload = checkForMobile;
       window.onresize = checkForMobile;
@@ -90,10 +94,20 @@
         link.click();
         document.body.removeChild(link);
       };
+
+      function displayCurrentIndex() {
+        document.getElementById("current-index").textContent =
+          currentIndex / 100 + 1;
+      }
+      window.onload = function () {
+        displayCurrentIndex();
+      };
     </script>
   </head>
   <body>
     <h1>Fluency Flow</h1>
+    <h2>Page <span id="current-index"></span></h2>
+
     <!-- <div class="search-container"><input type="text" id="searchBar" placeholder="Search for a word..." /></div> -->
     <table id="vocabTable">
       <thead>
@@ -223,6 +237,7 @@
               } else {
                 alert("No more data to display.");
               }
+              displayCurrentIndex();
             });
 
           document
@@ -234,6 +249,7 @@
               } else {
                 alert("You're already at the beginning of the data.");
               }
+              displayCurrentIndex();
             });
 
           document
@@ -281,6 +297,7 @@
               showEnglish = !showEnglish;
               renderTable();
             });
+
           // document .getElementById("searchModeButton") .addEventListener("click", () => {  window.location.href = "search.html"; //Redirect to search mode page});
         })
 
