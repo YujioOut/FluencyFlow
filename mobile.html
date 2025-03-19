@@ -23,6 +23,8 @@
         <tr>
           <th>Fluency</th>
           <th>Flow</th>
+          <th>Fluency</th>
+          <th>Flow</th>
         </tr>
       </thead>
       <tbody>
@@ -80,7 +82,7 @@
               : dataToDisplay;
 
             dataToShow.forEach((entry, index) => {
-              if (index % 2 === 0) {
+              if (index % 4 === 0) {
                 row = document.createElement("tr");
                 tableBody.appendChild(row);
               }

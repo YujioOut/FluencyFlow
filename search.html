@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fluency Flow</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      // Check screen width on page load and redirect to mobile.html if on a mobile device
+      window.onload = () => {
+        if (window.innerWidth < 768) {
+          window.location.href = "mobile.html"; // Redirect to mobile version
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <h1>Fluency Flow</h1>
+    <div class="search-container">
+      <input type="text" id="searchBar" placeholder="Search for a word..." />
+    </div>
+
+    <table id="vocabTable">
+      <thead>
+        <tr>
+          <th>一</th>
+          <th>二</th>
+          <th>三</th>
+          <th>四</th>
+          <th>五</th>
+          <th>六</th>
+          <th>七</th>
+          <th>八</th>
+          <th>九</th>
+          <th>十</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Data will be populated here -->
+      </tbody>
+    </table>
+
+    <div class="button-container">
+      <button class="study-button" id="studyButton">Study Mode</button>
+      <button class="prev-button" id="prevButton">Previous</button>
+      <button class="next-button" id="nextButton">Next</button>
+      <button class="reset-button" id="resetButton">Reset</button>
+      <button class="toggle-romaji-button" id="toggleRomajiButton">
+        Toggle Romaji
+      </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script>
+      let currentIndex = 0; // Keeps track of the current index of the CSV data
+      let selectedItems =
+        JSON.parse(localStorage.getItem("selectedItems")) || {}; // Stores selected items across pages
+      let isStudyMode = false; // Tracks if we're in study mode
+      let showRomaji = true; // Flag to control whether Romaji is shown
+      let fullData = []; // Entire dataset
+
+      // Load the CSV file
+      fetch("vocab_list.csv")
+        .then((response) => response.text())
+        .then((csvText) => {
+          fullData = Papa.parse(csvText, { header: true }).data; // Parse CSV
+
+          // Initial render
+          renderTable(fullData);
+        })
+        .catch((error) => console.error("Error loading the CSV file: ", error));
+
+      // Function to render the table
+      const renderTable = (data) => {
+        const tableBody = document.querySelector("#vocabTable tbody");
+        tableBody.innerHTML = ""; // Clear the table
+
+        // Populate the table
+        data.forEach((entry, index) => {
+          if (index % 10 === 0) {
+            row = document.createElement("tr");
+            tableBody.appendChild(row);
+          }
+
+          const td = document.createElement("td");
+          td.innerHTML = `${entry.Kanji}<br>${entry.Kana}<br>${
+            entry.English
+          }<br>${showRomaji ? entry.Romaji : ""}`;
+
+          const entryId = index;
+
+          // Highlight in normal mode
+          if (!isStudyMode && selectedItems[entryId]) {
+            td.classList.add("selected");
+          }
+
+          td.addEventListener("click", () => {
+            if (!isStudyMode) {
+              td.classList.toggle("selected");
+              if (td.classList.contains("selected")) {
+                selectedItems[entryId] = entry;
+              } else {
+                delete selectedItems[entryId];
+              }
+
+              localStorage.setItem(
+                "selectedItems",
+                JSON.stringify(selectedItems)
+              );
+            }
+          });
+
+          row.appendChild(td);
+        });
+      };
+
+      // Add event listener for the Study button
+      document.getElementById("studyButton").addEventListener("click", () => {
+        isStudyMode = !isStudyMode;
+        document.getElementById("studyButton").textContent = isStudyMode
+          ? "Show All"
+          : "Study Mode";
+
+        const studyData = Object.keys(selectedItems).map(
+          (id) => selectedItems[id]
+        );
+
+        renderTable(isStudyMode ? studyData : fullData);
+      });
+
+      // Add event listener for the Reset button
+      document.getElementById("resetButton").addEventListener("click", () => {
+        localStorage.removeItem("selectedItems");
+        selectedItems = {};
+        renderTable(fullData);
+      });
+
+      // Add event listener for the Romaji toggle button
+      document
+        .getElementById("toggleRomajiButton")
+        .addEventListener("click", () => {
+          showRomaji = !showRomaji;
+          const currentData = isStudyMode
+            ? Object.keys(selectedItems).map((id) => selectedItems[id])
+            : fullData;
+          renderTable(currentData);
+        });
+
+      // Add event listener for the Search bar
+      document.getElementById("searchBar").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase().trim(); // Sanitize input
+
+        // Filter the data based on Study Mode
+        const currentData = isStudyMode
+          ? Object.keys(selectedItems).map((id) => selectedItems[id])
+          : fullData;
+
+        const filteredData = query
+          ? currentData.filter((entry) => {
+              const combinedText =
+                `${entry.Kanji} ${entry.Kana} ${entry.Romaji} ${entry.English}`.toLowerCase();
+              return combinedText.includes(query);
+            })
+          : currentData; // Show all if query is empty
+
+        renderTable(filteredData);
+      });
+
+      // Add event listeners for navigation buttons
+      document.getElementById("nextButton").addEventListener("click", () => {
+        if (currentIndex + 100 < fullData.length) {
+          currentIndex += 100;
+          renderTable(fullData.slice(currentIndex, currentIndex + 100));
+        } else {
+          alert("No more data to display.");
+        }
+      });
+
+      document.getElementById("prevButton").addEventListener("click", () => {
+        if (currentIndex - 100 >= 0) {
+          currentIndex -= 100;
+          renderTable(fullData.slice(currentIndex, currentIndex + 100));
+        } else {
+          alert("You're already at the beginning of the data.");
+        }
+      });
+    </script>
+  </body>
+</html>

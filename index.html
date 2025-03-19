@@ -6,45 +6,7 @@
     <title>Fluency Flow</title>
     <link rel="stylesheet" href="styles.css" />
 
-    <style>
-      @media print {
-        @page {
-          margin: 0; /* Removes default page margins */
-        }
-
-        body {
-          font-family: Arial, sans-serif; /* Change to a clean, legible font */
-          font-size: 12pt; /* Standard size for printed documents */
-          line-height: 1.5; /* Improves readability */
-          color: #000; /* Ensure text is fully black for better contrast */
-        }
-
-        thead {
-          display: none; /* Keeps the header visible on every page */
-        }
-
-        tr {
-          page-break-inside: avoid; /* Prevents rows from splitting across pages */
-        }
-
-        table {
-          width: 100%; /* Ensures the table uses the full width of the page */
-          border-collapse: collapse; /* Reduces unnecessary spacing in the table */
-        }
-
-        td {
-          padding: 2px; /* Adds consistent spacing within cells for better readability */
-        }
-
-        /* Hide buttons and other unnecessary elements when printing */
-        .button-container,
-        button {
-          display: none; /* Hides all buttons */
-        }
-      }
-    </style>
     <script>
-      // Check screen width on page load and redirect to mobile.html if on a mobile device
       function checkForMobile() {
         if (window.innerWidth < 768) {
           window.location.href = "mobile.html";
@@ -55,60 +17,15 @@
         document.getElementById("current-index").textContent = currentIndex + 1;
       }
 
-      // Check screen width on page load and resize
       window.onload = checkForMobile;
       window.onresize = checkForMobile;
-
-      // The exportToCSV function
-      const exportToCSV = () => {
-        const selectedData = Object.values(selectedItems);
-        if (selectedData.length === 0) {
-          alert("No selected words to export.");
-          return;
-        }
-
-        // Ensure each entry has Kanji, Kana, English, and Romaji
-        const csvHeader = "Kanji,Kana,English,Romaji\n";
-        const csvRows = selectedData
-          .map((entry) => {
-            const kanji = entry.Kanji || "";
-            const kana = entry.Kana || "";
-            const english = entry.English || "";
-            const romaji = entry.Romaji || "";
-            return `${kanji},${kana},${english},${romaji}`;
-          })
-          .join("\n");
-
-        const csvContent = csvHeader + csvRows;
-
-        // Create and download the CSV
-        const blob = new Blob([csvContent], {
-          type: "text/csv;charset=utf-8;",
-        });
-        const url = URL.createObjectURL(blob);
-
-        const link = document.createElement("a");
-        link.href = url;
-        link.download = "selected_words.csv";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      };
-
-      function displayCurrentIndex() {
-        document.getElementById("current-index").textContent =
-          currentIndex / 100 + 1;
-      }
-      window.onload = function () {
-        displayCurrentIndex();
-      };
     </script>
   </head>
   <body>
     <h1>Fluency Flow</h1>
     <h2>Page <span id="current-index"></span></h2>
+    <h3>Known Words: <span id="known-count">0</span></h3>
 
-    <!-- <div class="search-container"><input type="text" id="searchBar" placeholder="Search for a word..." /></div> -->
     <table id="vocabTable">
       <thead>
         <tr>
@@ -124,13 +41,14 @@
           <th>十</th>
         </tr>
       </thead>
-      <tbody>
-        <!-- Data will be populated here -->
-      </tbody>
+      <tbody></tbody>
     </table>
 
     <div class="button-container">
-      <button class="study-button" id="studyButton">Study Mode</button>
+      <button class="hide-known-button" id="hideKnownButton">
+        Hide Known Words
+      </button>
+      <button class="show-all-button" id="showAllButton">Show All Words</button>
       <button class="prev-button" id="prevButton">Previous</button>
       <button class="next-button" id="nextButton">Next</button>
       <button class="reset-button" id="resetButton">Reset</button>
@@ -144,47 +62,45 @@
         Toggle English
       </button>
       <button class="export-button" id="exportButton">
-        Export <br />
-        Selected Words
+        Export Selected Words
       </button>
-      <!-- Add this new button -->
-      <!-- <button class="search-mode-button" id="searchModeButton">Search Mode</button> -->
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script>
-      let currentIndex = 0; // Keeps track of the current index of the CSV data
+      let currentIndex = 0;
       let selectedItems =
-        JSON.parse(localStorage.getItem("selectedItems")) || {}; // Stores selected items across pages
-      let isStudyMode = false; // Tracks if we're in study mode
-      let showRomaji = true; // Flag to control whether Romaji is shown
-      let showKana = true; // Flag to control whether Kana is shown
-      let showEnglish = true; // Flag to control whether English is shown
+        JSON.parse(localStorage.getItem("selectedItems")) || {};
+      let isHidingKnownWords = false;
+      let showRomaji = true;
+      let showKana = true;
+      let showEnglish = true;
 
-      // Load the CSV file
       fetch("vocab_list.csv")
         .then((response) => response.text())
         .then((csvText) => {
           const parsedData = Papa.parse(csvText, { header: true }).data;
 
-          // Function to render the data
           const renderTable = () => {
             const tableBody = document.querySelector("#vocabTable tbody");
-            tableBody.innerHTML = ""; // Clear the table
+            tableBody.innerHTML = "";
 
-            const dataToDisplay = parsedData.slice(
+            let dataToDisplay = parsedData.slice(
               currentIndex,
               currentIndex + 100
             );
-            const dataToDisplayForStudy = Object.keys(selectedItems).map(
-              (id) => parsedData[id]
-            );
+            let filteredData = dataToDisplay.map((entry, index) => ({
+              entry,
+              originalIndex: currentIndex + index,
+            }));
 
-            const dataToShow = isStudyMode
-              ? dataToDisplayForStudy
-              : dataToDisplay;
+            if (isHidingKnownWords) {
+              filteredData = filteredData.filter(
+                ({ originalIndex }) => !selectedItems[originalIndex]
+              );
+            }
 
-            dataToShow.forEach((entry, index) => {
+            filteredData.forEach(({ entry, originalIndex }, index) => {
               if (index % 10 === 0) {
                 row = document.createElement("tr");
                 tableBody.appendChild(row);
@@ -198,44 +114,43 @@
                 ${showRomaji ? entry.Romaji : ""}
               `;
 
-              const entryId = currentIndex + index;
-
-              if (!isStudyMode && selectedItems[entryId]) {
+              if (selectedItems[originalIndex]) {
                 td.classList.add("selected");
               }
 
               td.addEventListener("click", () => {
-                if (!isStudyMode) {
-                  td.classList.toggle("selected");
-                  if (td.classList.contains("selected")) {
-                    selectedItems[entryId] = entry;
-                  } else {
-                    delete selectedItems[entryId];
-                  }
-
-                  localStorage.setItem(
-                    "selectedItems",
-                    JSON.stringify(selectedItems)
-                  );
+                if (!selectedItems[originalIndex]) {
+                  selectedItems[originalIndex] = entry;
+                  td.classList.add("selected");
+                } else {
+                  delete selectedItems[originalIndex];
+                  td.classList.remove("selected");
                 }
+                localStorage.setItem(
+                  "selectedItems",
+                  JSON.stringify(selectedItems)
+                );
+                updateKnownCount();
               });
 
               row.appendChild(td);
             });
+            updateKnownCount();
           };
 
-          // Initial render
+          const updateKnownCount = () => {
+            document.getElementById("known-count").textContent =
+              Object.keys(selectedItems).length;
+          };
+
           renderTable();
 
-          // Event listeners for existing buttons
           document
             .getElementById("nextButton")
             .addEventListener("click", () => {
               if (currentIndex + 100 < parsedData.length) {
                 currentIndex += 100;
                 renderTable();
-              } else {
-                alert("No more data to display.");
               }
               displayCurrentIndex();
             });
@@ -246,19 +161,21 @@
               if (currentIndex - 100 >= 0) {
                 currentIndex -= 100;
                 renderTable();
-              } else {
-                alert("You're already at the beginning of the data.");
               }
               displayCurrentIndex();
             });
 
           document
-            .getElementById("studyButton")
+            .getElementById("hideKnownButton")
             .addEventListener("click", () => {
-              isStudyMode = !isStudyMode;
-              document.getElementById("studyButton").textContent = isStudyMode
-                ? "Show All"
-                : "Study Mode";
+              isHidingKnownWords = true;
+              renderTable();
+            });
+
+          document
+            .getElementById("showAllButton")
+            .addEventListener("click", () => {
+              isHidingKnownWords = false;
               renderTable();
             });
 
@@ -267,9 +184,9 @@
             .addEventListener("click", () => {
               localStorage.removeItem("selectedItems");
               selectedItems = {};
+              updateKnownCount();
               renderTable();
             });
-
           // Event listener for Romaji toggle button
           document
             .getElementById("toggleRomajiButton")
@@ -285,23 +202,19 @@
               showKana = !showKana;
               renderTable();
             });
-          // Attach the export function to the export button
-          document
-            .getElementById("exportButton")
-            .addEventListener("click", exportToCSV);
-
-          // Event listener for English toggle button
           document
             .getElementById("toggleEnglishButton")
             .addEventListener("click", () => {
               showEnglish = !showEnglish;
               renderTable();
             });
+          // Attach the export function to the export button
+          document
+            .getElementById("exportButton")
+            .addEventListener("click", exportToCSV);
 
-          // document .getElementById("searchModeButton") .addEventListener("click", () => {  window.location.href = "search.html"; //Redirect to search mode page});
-        })
-
-        .catch((error) => console.error("Error loading the CSV file: ", error));
+          // Event listener for English toggle button
+        });
     </script>
   </body>
 </html>
