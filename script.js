@@ -240,14 +240,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("change", (e) => {
           const selectedTheme = e.target.value;
           const themeLink = document.getElementById("themeStylesheet");
-          themeLink.href = `${window.location.origin}/FluencyFlow/themes/theme-${selectedTheme}.css`;
+          themeLink.href = `theme-${selectedTheme}.css`;
         });
       // Load last used theme
       const savedTheme = localStorage.getItem("user-theme") || "cosmic";
       document.getElementById("themeSelector").value = savedTheme;
       document.getElementById(
         "themeStylesheet"
-      ).href = `${window.location.origin}/FluencyFlow/themes/theme-${selectedTheme}.css`;
+      ).href = `theme-${savedTheme}.css`;
 
       // Save theme on change
       document

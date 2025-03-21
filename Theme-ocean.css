@@ -1,0 +1,49 @@
+/* THEME: OCEAN DEPTHS */
+
+body {
+  background: linear-gradient(to bottom, #003049, #012a36);
+  color: #d6f6ff;
+  font-family: "Ubuntu", sans-serif;
+}
+
+th,
+td {
+  background-color: #014f66;
+  border: 1px solid #027a99;
+  color: #d6f6ff;
+  transition: transform 0.2s ease-in-out;
+}
+
+td.selected {
+  background-color: #00a6fb !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(0, 166, 251, 0.3);
+}
+
+button {
+  background-color: #0077b6;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #00b4d8;
+  transform: scale(1.06);
+}
+
+button:active {
+  background-color: #0096c7;
+}
+
+h1,
+h2,
+h3 {
+  color: #caf0f8;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 12px rgba(0, 119, 182, 0.1);
+  border-radius: 10px;
+}

@@ -1,0 +1,57 @@
+/* THEME: DREAMSCAPE */
+
+body {
+  background: linear-gradient(to bottom right, #f0e6ff, #fceefb);
+  color: #3a2e47;
+  font-family: "Quicksand", sans-serif;
+}
+
+th,
+td {
+  background-color: #ffffffdd;
+  border: 1px solid #e0cfe0;
+  color: #3a2e47;
+  backdrop-filter: blur(4px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+td:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgba(200, 150, 255, 0.2);
+}
+
+td.selected {
+  background-color: #dab8f2 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(180, 100, 255, 0.4);
+  font-weight: bold;
+}
+
+button {
+  background-color: #c69df0;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+}
+
+button:hover {
+  background-color: #b487e6;
+  transform: scale(1.06);
+  box-shadow: 0 0 8px rgba(190, 140, 255, 0.3);
+}
+
+button:active {
+  background-color: #9d6cd1;
+}
+
+h1,
+h2,
+h3 {
+  color: #7c4dff;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 14px rgba(150, 120, 255, 0.1);
+  border-radius: 10px;
+}

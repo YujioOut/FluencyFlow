@@ -1,0 +1,47 @@
+/* THEME: NIGHT READER */
+
+body {
+  background: #1b1f27;
+  color: #f5eecf;
+  font-family: "Inter", sans-serif;
+}
+
+th,
+td {
+  background-color: #262b37;
+  border: 1px solid #393e4b;
+  color: #f5eecf;
+}
+
+td.selected {
+  background-color: #ffc857 !important;
+  color: #1b1f27 !important;
+  font-weight: bold;
+}
+
+button {
+  background-color: #ffc857;
+  color: #1b1f27;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ffb740;
+  transform: scale(1.04);
+}
+
+button:active {
+  background-color: #d68b00;
+}
+
+h1,
+h2,
+h3 {
+  color: #ffe6a7;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 10px rgba(255, 200, 100, 0.05);
+  border-radius: 6px;
+}

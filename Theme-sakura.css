@@ -1,0 +1,49 @@
+/* THEME: SAKURA BLOSSOM */
+
+body {
+  background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+  color: #4b2e2e;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+th,
+td {
+  background-color: #ffffffdd;
+  border: 1px solid #f8cdd0;
+  color: #4b2e2e;
+  transition: transform 0.2s ease-in-out;
+}
+
+td.selected {
+  background-color: #f48fb1 !important;
+  color: #fffaf9 !important;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(244, 143, 177, 0.3);
+}
+
+button {
+  background-color: #f06292;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ec407a;
+  transform: scale(1.06);
+}
+
+button:active {
+  background-color: #d81b60;
+}
+
+h1,
+h2,
+h3 {
+  color: #ad1457;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 12px rgba(250, 200, 210, 0.1);
+  border-radius: 8px;
+}

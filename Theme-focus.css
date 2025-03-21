@@ -1,0 +1,44 @@
+/* THEME: FOCUS MODE */
+
+body {
+  background: #f4f4f4;
+  color: #111;
+}
+
+th,
+td {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  color: #111;
+}
+
+td.selected {
+  background-color: #007acc !important;
+  color: white !important;
+}
+
+button {
+  background-color: #005b99;
+  color: white;
+}
+
+button:hover {
+  background-color: #007acc;
+}
+
+h1,
+h2,
+h3 {
+  color: #005b99;
+}
+
+.table-container,
+.button-container {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  letter-spacing: 0.2px;
+}
