@@ -461,3 +461,18 @@ h1:hover {
   border: 1px solid #ddd;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+
+.top-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .top-header {
+    align-items: flex-start;
+    padding-left: 60px;
+    width: 100%;
+  }
+}
