@@ -240,14 +240,14 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("change", (e) => {
           const selectedTheme = e.target.value;
           const themeLink = document.getElementById("themeStylesheet");
-          themeLink.href = `theme-${selectedTheme}.css`;
+          themeLink.href = `Theme-${selectedTheme}.css`;
         });
       // Load last used theme
       const savedTheme = localStorage.getItem("user-theme") || "cosmic";
       document.getElementById("themeSelector").value = savedTheme;
       document.getElementById(
         "themeStylesheet"
-      ).href = `theme-${savedTheme}.css`;
+      ).href = `Theme-${savedTheme}.css`;
 
       // Save theme on change
       document
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const selectedTheme = e.target.value;
           document.getElementById(
             "themeStylesheet"
-          ).href = `themes/theme-${selectedTheme}.css`;
+          ).href = `Theme-${selectedTheme}.css`;
           localStorage.setItem("user-theme", selectedTheme);
         });
     });
