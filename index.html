@@ -5,42 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluency Flow</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      id="themeStylesheet"
+      rel="stylesheet"
+      href="./themes/Theme-cosmic.css"
+    />
   </head>
   <body>
     <h1>Fluency Flow</h1>
-    <h2>Page <span id="current-index"></span></h2>
-    <h3>Known Words: <span id="known-count">0</span></h3>
 
-    <table id="vocabTable">
-      <thead>
-        <tr id="table-header"></tr>
-      </thead>
-      <tbody></tbody>
-    </table>
+    <div class="known-words-container">
+      <div class="known-words-label">Known Words</div>
+      <div id="known-count" class="known-words-highlight">0</div>
+    </div>
 
-    <div class="button-container">
-      <button class="hide-known-button" id="hideKnownButton">
-        Hide Known Words
-      </button>
-      <button class="show-all-button" id="showAllButton">Show All Words</button>
-      <button class="prev-button" id="prevButton">Previous</button>
-      <button class="next-button" id="nextButton">Next</button>
-      <button class="reset-button" id="resetButton">Reset</button>
-      <button class="toggle-romaji-button" id="toggleRomajiButton">
-        Toggle Romaji
-      </button>
-      <button class="toggle-kana-button" id="toggleKanaButton">
-        Toggle Kana
-      </button>
-      <button class="toggle-english-button" id="toggleEnglishButton">
-        Toggle English
-      </button>
-      <button class="export-button" id="exportButton">
-        📘 Copy Known Words
-      </button>
-      <button class="export-button" id="exportNext20Button">
-        🔍 Copy Next 20 Unknown Words
-      </button>
+    <div id="theme-selector-container">
+      <select id="themeSelector" class="theme-selector">
+        <option value="sakura">Sakura</option>
+        <option value="dark">Dark</option>
+        <option value="cosmic">Quantum</option>
+        <option value="tactile">Tactile Warmth</option>
+        <option value="memory">Memory Palace</option>
+        <option value="ocean">Ocean Depths</option>
+        <option value="garden">Garden</option>
+        <option value="dream">Bubble</option>
+        <option value="crunch">Exam Crunch</option>
+        <option value="night">Night Reader</option>
+        <option value="focus">Focus</option>
+      </select>
+      <div class="page-counter">Page <span id="current-index"></span></div>
+    </div>
+
+    <div class="container">
+      <table id="vocabTable">
+        <thead>
+          <tr id="table-header"></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <div class="button-container">
+        <button class="hide-known-button" id="hideKnownButton">
+          Hide Known Words
+        </button>
+        <button class="show-all-button" id="showAllButton">
+          Show All Words
+        </button>
+        <button class="prev-button" id="prevButton">Previous</button>
+        <button class="next-button" id="nextButton">Next</button>
+        <button class="reset-button" id="resetButton">Reset</button>
+        <button class="toggle-romaji-button" id="toggleRomajiButton">
+          Toggle Romaji
+        </button>
+        <button class="toggle-kana-button" id="toggleKanaButton">
+          Toggle Kana
+        </button>
+        <button class="toggle-english-button" id="toggleEnglishButton">
+          Toggle English
+        </button>
+        <button class="export-button" id="exportButton">
+          📘 Copy Known Words
+        </button>
+        <button class="export-button" id="exportNext20Button">
+          🔍 Copy Next 20 Unknown Words
+        </button>
+      </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>

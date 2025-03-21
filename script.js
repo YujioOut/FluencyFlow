@@ -10,11 +10,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const tableHeader = document.getElementById("table-header");
 
   function updateTableHeader() {
-    let isMobile = window.innerWidth < 768;
-    let headers = isMobile
-      ? ["一", "二", "三", "四"]
-      : ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+    const width = window.innerWidth;
+    let headers;
 
+    if (width < 768) {
+      headers = ["一", "二", "三", "四"];
+    } else if (width < 1300) {
+      headers = ["一", "二", "三", "四", "五", "六"];
+    } else {
+      headers = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
+    }
+
+    const tableHeader = document.getElementById("table-header");
     tableHeader.innerHTML = "";
     headers.forEach((symbol) => {
       const th = document.createElement("th");
@@ -227,6 +234,30 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("click", () => {
           showEnglish = !showEnglish;
           renderTable();
+        });
+      document
+        .getElementById("themeSelector")
+        .addEventListener("change", (e) => {
+          const selectedTheme = e.target.value;
+          const themeLink = document.getElementById("themeStylesheet");
+          themeLink.href = `themes/theme-${selectedTheme}.css`;
+        });
+      // Load last used theme
+      const savedTheme = localStorage.getItem("user-theme") || "cosmic";
+      document.getElementById("themeSelector").value = savedTheme;
+      document.getElementById(
+        "themeStylesheet"
+      ).href = `themes/theme-${savedTheme}.css`;
+
+      // Save theme on change
+      document
+        .getElementById("themeSelector")
+        .addEventListener("change", (e) => {
+          const selectedTheme = e.target.value;
+          document.getElementById(
+            "themeStylesheet"
+          ).href = `themes/theme-${selectedTheme}.css`;
+          localStorage.setItem("user-theme", selectedTheme);
         });
     });
 });
