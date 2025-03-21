@@ -1,0 +1,44 @@
+/* THEME: GARDEN */
+
+body {
+  background: linear-gradient(to bottom, #d6f5d6, #fefbe9);
+  color: #2c3e50;
+}
+
+th,
+td {
+  background-color: #ffffff;
+  border: 1px solid #c8e6c9;
+  color: #2c3e50;
+}
+
+td.selected {
+  background-color: #81c784 !important;
+  color: #fff !important;
+}
+
+button {
+  background-color: #66bb6a;
+  color: white;
+}
+
+button:hover {
+  background-color: #81c784;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #388e3c;
+}
+
+h1,
+h2,
+h3 {
+  color: #33691e;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 10px rgba(50, 205, 50, 0.15);
+  border-radius: 8px;
+}

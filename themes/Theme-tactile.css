@@ -1,0 +1,49 @@
+/* THEME: TACTILE WARMTH */
+
+body {
+  background: linear-gradient(to bottom, #f1e9db, #fdf6ec);
+  color: #5e4636;
+  font-family: "Merriweather", serif;
+}
+
+th,
+td {
+  background-color: #fff8f0;
+  border: 1px solid #e3d2bd;
+  color: #5e4636;
+  transition: transform 0.2s ease-in-out;
+}
+
+td.selected {
+  background-color: #d9b382 !important;
+  color: #ffffff !important;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(160, 105, 40, 0.2);
+}
+
+button {
+  background-color: #ba7f4c;
+  color: white;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #a66e3b;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #8e5731;
+}
+
+h1,
+h2,
+h3 {
+  color: #4e392c;
+}
+
+.table-container,
+.button-container {
+  box-shadow: 0 0 10px rgba(130, 90, 60, 0.1);
+  border-radius: 8px;
+}
