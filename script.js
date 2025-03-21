@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("change", (e) => {
           const selectedTheme = e.target.value;
           const themeLink = document.getElementById("themeStylesheet");
-          themeLink.href = `./themes/theme-${selectedTheme}.css`;
+          themeLink.href = `../themes/theme-${selectedTheme}.css`;
         });
       // Load last used theme
       const savedTheme = localStorage.getItem("user-theme") || "cosmic";
