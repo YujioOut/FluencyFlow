@@ -1,4 +1,4 @@
-/* Global styles */
+/* ✅ Global styles */
 body {
   font-family: "Arial", sans-serif;
   background-color: #f4f4f9;
@@ -14,60 +14,124 @@ body {
 h1 {
   text-align: center;
   color: #333;
+  margin-top: 10px;
 }
 
+/* ✅ Table styles with correct width & spacing */
 table {
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
+  max-width: 1175px; /* 🆕 Increased width back */
   border-collapse: separate;
-  border-spacing: 5px;
+  border-spacing: 6px 12px; /* 🆕 Horizontal (6px) & Vertical (12px) spacing */
   table-layout: fixed;
   margin-top: 20px;
 }
 
+/* ✅ Table Cells: Balanced proportions */
 th,
 td {
   padding: 12px;
   text-align: center;
-  height: 80px;
   background-color: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  font-size: 15px; /* 🆕 Slightly larger for readability */
+  line-height: 1.5; /* 🆕 More vertical spacing inside each cell */
   word-wrap: break-word;
+  transition: background-color 0.2s ease, transform 0.1s ease-in-out;
+  height: auto;
+  min-height: 110px; /* 🆕 Increased min-height */
+  max-height: 160px; /* Keeps text balanced */
+  padding: 14px; /* 🆕 More inner padding */
 }
 
+/* ✅ Fix text spacing & wrapping */
 td {
   cursor: pointer;
-  transition: background-color 0.02s ease;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
+/* ✅ Vertical spacing between rows */
+tbody tr {
+  margin-bottom: 6px; /* 🆕 Added space between rows */
+}
+
+/* ✅ Selected words get a highlight */
 td.selected {
   background-color: lightgreen;
 }
 
-.button-container {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+/* ✅ Desktop: 10 columns, improved spacing */
+@media screen and (min-width: 769px) {
+  #table-header {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+  }
+
+  tbody tr {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 6px;
+  }
+
+  .button-container {
+    position: fixed;
+    right: 10px;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 120px;
+  }
 }
 
+/* ✅ Mobile: 4 columns, better button layout */
+@media screen and (max-width: 768px) {
+  #table-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  tbody tr {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+  }
+
+  .button-container {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+    width: 90%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ✅ Button Styling */
 button {
-  padding: 12px 20px;
+  padding: 10px 16px;
   font-size: 14px;
   background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
 }
 
 button:hover {
   background-color: #45a049;
+  transform: scale(1.04);
 }
 
 button:active {
@@ -81,21 +145,4 @@ button:disabled {
 
 button:focus {
   outline: none;
-}
-
-.toggle-romaji-button {
-  margin-top: 10px;
-}
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }

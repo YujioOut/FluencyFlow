@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fluency Flow</title>
     <link rel="stylesheet" href="styles.css" />
-
-    <script>
-      function checkForMobile() {
-        if (window.innerWidth < 768) {
-          window.location.href = "mobile.html";
-        }
-      }
-
-      function updateCurrentIndex(currentIndex) {
-        document.getElementById("current-index").textContent = currentIndex + 1;
-      }
-
-      window.onload = checkForMobile;
-      window.onresize = checkForMobile;
-    </script>
   </head>
   <body>
     <h1>Fluency Flow</h1>
@@ -28,18 +13,7 @@
 
     <table id="vocabTable">
       <thead>
-        <tr>
-          <th>一</th>
-          <th>二</th>
-          <th>三</th>
-          <th>四</th>
-          <th>五</th>
-          <th>六</th>
-          <th>七</th>
-          <th>八</th>
-          <th>九</th>
-          <th>十</th>
-        </tr>
+        <tr id="table-header"></tr>
       </thead>
       <tbody></tbody>
     </table>
@@ -62,159 +36,11 @@
         Toggle English
       </button>
       <button class="export-button" id="exportButton">
-        Export Selected Words
+        Copy Known Words To Clipboard
       </button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
-    <script>
-      let currentIndex = 0;
-      let selectedItems =
-        JSON.parse(localStorage.getItem("selectedItems")) || {};
-      let isHidingKnownWords = false;
-      let showRomaji = true;
-      let showKana = true;
-      let showEnglish = true;
-
-      fetch("vocab_list.csv")
-        .then((response) => response.text())
-        .then((csvText) => {
-          const parsedData = Papa.parse(csvText, { header: true }).data;
-
-          const renderTable = () => {
-            const tableBody = document.querySelector("#vocabTable tbody");
-            tableBody.innerHTML = "";
-
-            let dataToDisplay = parsedData.slice(
-              currentIndex,
-              currentIndex + 100
-            );
-            let filteredData = dataToDisplay.map((entry, index) => ({
-              entry,
-              originalIndex: currentIndex + index,
-            }));
-
-            if (isHidingKnownWords) {
-              filteredData = filteredData.filter(
-                ({ originalIndex }) => !selectedItems[originalIndex]
-              );
-            }
-
-            filteredData.forEach(({ entry, originalIndex }, index) => {
-              if (index % 10 === 0) {
-                row = document.createElement("tr");
-                tableBody.appendChild(row);
-              }
-
-              const td = document.createElement("td");
-              td.innerHTML = `
-                ${entry.Kanji}<br>
-                ${showKana ? entry.Kana : ""}<br>
-                ${showEnglish ? entry.English : ""}<br>
-                ${showRomaji ? entry.Romaji : ""}
-              `;
-
-              if (selectedItems[originalIndex]) {
-                td.classList.add("selected");
-              }
-
-              td.addEventListener("click", () => {
-                if (!selectedItems[originalIndex]) {
-                  selectedItems[originalIndex] = entry;
-                  td.classList.add("selected");
-                } else {
-                  delete selectedItems[originalIndex];
-                  td.classList.remove("selected");
-                }
-                localStorage.setItem(
-                  "selectedItems",
-                  JSON.stringify(selectedItems)
-                );
-                updateKnownCount();
-              });
-
-              row.appendChild(td);
-            });
-            updateKnownCount();
-          };
-
-          const updateKnownCount = () => {
-            document.getElementById("known-count").textContent =
-              Object.keys(selectedItems).length;
-          };
-
-          renderTable();
-
-          document
-            .getElementById("nextButton")
-            .addEventListener("click", () => {
-              if (currentIndex + 100 < parsedData.length) {
-                currentIndex += 100;
-                renderTable();
-              }
-              displayCurrentIndex();
-            });
-
-          document
-            .getElementById("prevButton")
-            .addEventListener("click", () => {
-              if (currentIndex - 100 >= 0) {
-                currentIndex -= 100;
-                renderTable();
-              }
-              displayCurrentIndex();
-            });
-
-          document
-            .getElementById("hideKnownButton")
-            .addEventListener("click", () => {
-              isHidingKnownWords = true;
-              renderTable();
-            });
-
-          document
-            .getElementById("showAllButton")
-            .addEventListener("click", () => {
-              isHidingKnownWords = false;
-              renderTable();
-            });
-
-          document
-            .getElementById("resetButton")
-            .addEventListener("click", () => {
-              localStorage.removeItem("selectedItems");
-              selectedItems = {};
-              updateKnownCount();
-              renderTable();
-            });
-          // Event listener for Romaji toggle button
-          document
-            .getElementById("toggleRomajiButton")
-            .addEventListener("click", () => {
-              showRomaji = !showRomaji;
-              renderTable();
-            });
-
-          // Event listener for Kana toggle button
-          document
-            .getElementById("toggleKanaButton")
-            .addEventListener("click", () => {
-              showKana = !showKana;
-              renderTable();
-            });
-          document
-            .getElementById("toggleEnglishButton")
-            .addEventListener("click", () => {
-              showEnglish = !showEnglish;
-              renderTable();
-            });
-          // Attach the export function to the export button
-          document
-            .getElementById("exportButton")
-            .addEventListener("click", exportToCSV);
-
-          // Event listener for English toggle button
-        });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
