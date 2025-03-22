@@ -1,0 +1,59 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 140px;
+  max-width: 140px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  margin-right: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .button-container {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: none;
+  }
+
+  button {
+    width: auto;
+    flex: 1 1 30%;
+    min-width: 100px;
+  }
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 14px;
+  background-color: #5c9eaf;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease-in-out;
+}
+
+button:hover {
+  background-color: #4b90a0;
+  transform: scale(1.04);
+}
+
+button:active {
+  background-color: #397c8d;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:focus {
+  outline: none;
+}

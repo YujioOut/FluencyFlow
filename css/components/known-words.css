@@ -1,0 +1,47 @@
+
+#known-count-container {
+  background: linear-gradient(135deg, #5c9eaf, #4b90a0);
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  margin-top: 10px;
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+}
+
+#known-count-container:hover {
+  transform: scale(1.08);
+  background: linear-gradient(135deg, #4b90a0, #397c8d);
+}
+
+#known-count {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.known-words-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: rgba(92, 158, 175, 0.15);
+  box-shadow: 0 4px 10px rgba(92, 158, 175, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.known-words-label {
+  font-size: 18px;
+  color: #276c8a;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}

@@ -1,0 +1,37 @@
+/* 🖥️ Theme Selector (Moves to Top Right) */
+#theme-selector-container {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 100;
+
+  padding: 6px 10px;
+  border-radius: 8px;
+
+  backdrop-filter: blur(6px);
+  transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#theme-selector {
+  font-size: 14px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out, border 0.2s ease-in-out;
+}
+
+#theme-selector:hover {
+  background-color: #f1f1f1;
+  border-color: #5c9eaf;
+}
+
+#theme-selector:focus {
+  outline: none;
+  border-color: #4b90a0;
+}
