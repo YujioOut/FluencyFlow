@@ -1,13 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-  let selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || {};
-  let isHidingKnownWords = false;
+  const languageScreen = document.getElementById("language-screen");
+  const app = document.getElementById("app");
+  const startButton = document.getElementById("startButton");
+
+  startButton.addEventListener("click", () => {
+    const selectedLanguage = document.getElementById("languageSelector").value;
+    languageScreen.style.display = "none";
+    app.style.display = "block";
+    initFluencyFlow(selectedLanguage);
+  });
+});
+
+function initFluencyFlow(language) {
+  const storageKey = (type) => `${type}-${language}`;
+
+  let selectedItems =
+    JSON.parse(localStorage.getItem(storageKey("selectedItems"))) || {};
+  let isHidingKnownWords =
+    JSON.parse(localStorage.getItem(storageKey("isHiding"))) || false;
+  let displayStartIndex = parseInt(
+    localStorage.getItem(storageKey("startIndex")) || "0"
+  );
   let showRomaji = true;
   let showKana = true;
   let showEnglish = true;
   let filteredIndex = [];
-  let displayStartIndex = 0;
 
+  const csvMap = {
+    japanese: "japanese.csv",
+    chinese: "chinese.csv",
+  };
+  const csvFile = csvMap[language];
   const tableHeader = document.getElementById("table-header");
+
+  function saveProgress() {
+    localStorage.setItem(
+      storageKey("selectedItems"),
+      JSON.stringify(selectedItems)
+    );
+    localStorage.setItem(
+      storageKey("isHiding"),
+      JSON.stringify(isHidingKnownWords)
+    );
+    localStorage.setItem(
+      storageKey("startIndex"),
+      displayStartIndex.toString()
+    );
+    document
+      .getElementById("returnToLanguageBtn")
+      .addEventListener("click", () => {
+        document.getElementById("app").style.display = "none";
+        document.getElementById("language-screen").style.display = "block";
+      });
+  }
 
   function updateTableHeader() {
     const width = window.innerWidth;
@@ -23,7 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
       headers = ["一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
     }
 
-    const tableHeader = document.getElementById("table-header");
     tableHeader.innerHTML = "";
     headers.forEach((symbol) => {
       const th = document.createElement("th");
@@ -45,27 +89,46 @@ document.addEventListener("DOMContentLoaded", () => {
       pageNumber.toFixed(2);
   }
 
-  function exportKnownWords() {
-    let knownWords = Object.values(selectedItems).map(
-      (entry) => `${entry.Kanji}`
-    );
+  function updateVideoEmbed() {
+    const videoContainer = document.getElementById("video-container");
 
-    if (knownWords.length === 0) {
-      alert("You haven't selected any known words yet.");
+    if (language !== "chinese" || isHidingKnownWords) {
+      videoContainer.style.display = "none";
+      videoContainer.innerHTML = "";
       return;
     }
 
-    let textToCopy = knownWords.join("\n");
+    const videoURLs = [
+      "https://www.youtube.com/embed/5ZmgiEcfN7U",
+      "https://www.youtube.com/embed/w9m6bPczqoc",
+      "https://www.youtube.com/embed/4TvMvpVg0Z4?si=wsP1NmtfkinWRZyS",
+    ];
 
+    const page = Math.floor(displayStartIndex / 100);
+
+    if (page >= 0 && page <= 2) {
+      videoContainer.innerHTML = `
+       
+        <iframe width="100%" height="200"
+          src="${videoURLs[page]}"
+          frameborder="0" allowfullscreen>
+        </iframe>`;
+      videoContainer.style.display = "block";
+    } else {
+      videoContainer.style.display = "none";
+      videoContainer.innerHTML = "";
+    }
+  }
+
+  function exportKnownWords() {
+    const knownWords = Object.values(selectedItems).map(
+      (entry) => entry.Kanji || entry.Hanzi || ""
+    );
+    if (knownWords.length === 0)
+      return alert("You haven't selected any known words yet.");
     navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => alert("Known words copied to clipboard!"))
-      .catch(() =>
-        alert(
-          "Failed to copy. Try manually copying the text below.\n\n" +
-            textToCopy
-        )
-      );
+      .writeText(knownWords.join("\n"))
+      .then(() => alert("Known words copied to clipboard!"));
   }
 
   function exportNext20UnknownWords(parsedData) {
@@ -76,45 +139,44 @@ document.addEventListener("DOMContentLoaded", () => {
     const unknownWords = currentPage.filter((index) => !selectedItems[index]);
     const next20 = unknownWords
       .slice(0, 20)
-      .map((index) => parsedData[index].Kanji || parsedData[index].Hanzi);
+      .map((index) => parsedData[index].Kanji || parsedData[index].Hanzi || "");
 
-    if (next20.length === 0) {
-      alert("No unknown words found on this page.");
-      return;
-    }
-
-    const textToCopy = next20.join("\n");
-
+    if (next20.length === 0)
+      return alert("No unknown words found on this page.");
     navigator.clipboard
-      .writeText(textToCopy)
-      .then(() => alert("Next 20 unknown words copied to clipboard!"))
-      .catch(() =>
-        alert(
-          "Failed to copy. Try manually copying the text below.\n\n" +
-            textToCopy
-        )
-      );
+      .writeText(next20.join("\n"))
+      .then(() => alert("Next 20 unknown words copied to clipboard!"));
   }
 
-  window.addEventListener("resize", updateTableHeader);
+  window.addEventListener("resize", () => {
+    updateTableHeader();
+    renderTable();
+  });
+
   updateTableHeader();
 
-  fetch("vocab_list.csv")
+  fetch(csvFile)
     .then((response) => response.text())
     .then((csvText) => {
       const parsedData = Papa.parse(csvText, { header: true }).data;
       filteredIndex = [...Array(parsedData.length).keys()];
 
+      if (isHidingKnownWords) {
+        filteredIndex = filteredIndex.filter((index) => !selectedItems[index]);
+      }
+
       function renderTable() {
         const tableBody = document.querySelector("#vocabTable tbody");
         tableBody.innerHTML = "";
-        let columns = window.innerWidth < 768 ? 4 : 10;
+        const columns =
+          window.innerWidth < 768 ? 4 : window.innerWidth < 1300 ? 6 : 10;
+        let row;
 
-        let wordsToShow = filteredIndex.slice(
+        const wordsToShow = filteredIndex.slice(
           displayStartIndex,
           displayStartIndex + 100
         );
-        let wordsData = wordsToShow.map((index) => ({
+        const wordsData = wordsToShow.map((index) => ({
           entry: parsedData[index],
           originalIndex: index,
         }));
@@ -126,16 +188,14 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           const td = document.createElement("td");
-          td.innerHTML = `
-            ${entry.Kanji}<br>
-            ${showKana ? entry.Kana : ""}<br>
-            ${showEnglish ? entry.English : ""}<br>
-            ${showRomaji ? entry.Romaji : ""}
-          `;
+          td.innerHTML =
+            (entry.Kanji || entry.Hanzi || "") +
+            "<br>" +
+            (showKana ? (entry.Kana || "") + "<br>" : "") +
+            (showEnglish ? (entry.English || "") + "<br>" : "") +
+            (showRomaji ? entry.Romaji || entry.Pinyin || "" : "");
 
-          if (selectedItems[originalIndex]) {
-            td.classList.add("selected");
-          }
+          if (selectedItems[originalIndex]) td.classList.add("selected");
 
           td.addEventListener("click", () => {
             td.classList.toggle("selected");
@@ -144,10 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
               delete selectedItems[originalIndex];
             }
-            localStorage.setItem(
-              "selectedItems",
-              JSON.stringify(selectedItems)
-            );
+            saveProgress();
             updateKnownCount();
           });
 
@@ -156,10 +213,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
         updateKnownCount();
         updatePageDisplay();
+        updateVideoEmbed(); // 🔥 Now called here!
+        saveProgress();
       }
 
       renderTable();
-      window.addEventListener("resize", renderTable);
 
       document.getElementById("nextButton").addEventListener("click", () => {
         if (displayStartIndex + 100 < filteredIndex.length) {
@@ -182,30 +240,31 @@ document.addEventListener("DOMContentLoaded", () => {
           filteredIndex = filteredIndex.filter(
             (index) => !selectedItems[index]
           );
-          if (displayStartIndex >= filteredIndex.length) {
-            displayStartIndex = Math.max(0, filteredIndex.length - 100);
-          }
+          displayStartIndex = Math.min(
+            displayStartIndex,
+            filteredIndex.length - 100
+          );
           renderTable();
-          updatePageDisplay();
         });
 
       document.getElementById("showAllButton").addEventListener("click", () => {
         isHidingKnownWords = false;
         filteredIndex = [...Array(parsedData.length).keys()];
-        selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || {};
         displayStartIndex = Math.floor(displayStartIndex / 100) * 100;
+        selectedItems =
+          JSON.parse(localStorage.getItem(storageKey("selectedItems"))) || {};
         renderTable();
-        updatePageDisplay();
       });
 
       document.getElementById("resetButton").addEventListener("click", () => {
-        localStorage.removeItem("selectedItems");
         selectedItems = {};
         filteredIndex = [...Array(parsedData.length).keys()];
         displayStartIndex = 0;
-        updateKnownCount();
+        isHidingKnownWords = false;
+        localStorage.removeItem(storageKey("selectedItems"));
+        localStorage.removeItem(storageKey("startIndex"));
+        localStorage.removeItem(storageKey("isHiding"));
         renderTable();
-        updatePageDisplay();
       });
 
       document
@@ -213,9 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .addEventListener("click", exportKnownWords);
       document
         .getElementById("exportNext20Button")
-        .addEventListener("click", () => {
-          exportNext20UnknownWords(parsedData);
-        });
+        .addEventListener("click", () => exportNext20UnknownWords(parsedData));
 
       document
         .getElementById("toggleRomajiButton")
@@ -237,29 +294,17 @@ document.addEventListener("DOMContentLoaded", () => {
           showEnglish = !showEnglish;
           renderTable();
         });
-      document
-        .getElementById("themeSelector")
-        .addEventListener("change", (e) => {
-          const selectedTheme = e.target.value;
-          const themeLink = document.getElementById("themeStylesheet");
-          themeLink.href = `Theme-${selectedTheme}.css`;
-        });
-      // Load last used theme
-      const savedTheme = localStorage.getItem("user-theme") || "cosmic";
-      document.getElementById("themeSelector").value = savedTheme;
-      document.getElementById(
-        "themeStylesheet"
-      ).href = `Theme-${savedTheme}.css`;
 
-      // Save theme on change
-      document
-        .getElementById("themeSelector")
-        .addEventListener("change", (e) => {
-          const selectedTheme = e.target.value;
-          document.getElementById(
-            "themeStylesheet"
-          ).href = `Theme-${selectedTheme}.css`;
-          localStorage.setItem("user-theme", selectedTheme);
-        });
+      const themeSelector = document.getElementById("themeSelector");
+      const themeStylesheet = document.getElementById("themeStylesheet");
+      const savedTheme = localStorage.getItem("user-theme") || "cosmic";
+      themeSelector.value = savedTheme;
+      themeStylesheet.href = `../Themes/Theme-${savedTheme}.css`;
+
+      themeSelector.addEventListener("change", (e) => {
+        const selectedTheme = e.target.value;
+        themeStylesheet.href = `../Themes/Theme-${selectedTheme}.css`;
+        localStorage.setItem("user-theme", selectedTheme);
+      });
     });
-});
+}
