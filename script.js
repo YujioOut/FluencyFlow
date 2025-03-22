@@ -299,11 +299,11 @@ function initFluencyFlow(language) {
       const themeStylesheet = document.getElementById("themeStylesheet");
       const savedTheme = localStorage.getItem("user-theme") || "cosmic";
       themeSelector.value = savedTheme;
-      themeStylesheet.href = `../Themes/Theme-${savedTheme}.css`;
+      themeStylesheet.href = `../themes/Theme-${savedTheme}.css`;
 
       themeSelector.addEventListener("change", (e) => {
         const selectedTheme = e.target.value;
-        themeStylesheet.href = `../Themes/Theme-${selectedTheme}.css`;
+        themeStylesheet.href = `../themes/Theme-${selectedTheme}.css`;
         localStorage.setItem("user-theme", selectedTheme);
       });
     });
