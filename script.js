@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateTableHeader() {
     const width = window.innerWidth;
+    const isTouchDevice =
+      "ontouchstart" in window || navigator.maxTouchPoints > 0;
     let headers;
 
-    if (width < 768) {
+    if (width < 768 || (isTouchDevice && width < 1024)) {
       headers = ["一", "二", "三", "四"];
     } else if (width < 1300) {
       headers = ["一", "二", "三", "四", "五", "六"];
