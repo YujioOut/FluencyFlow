@@ -12,6 +12,12 @@
     />
   </head>
   <body>
+    <script>
+      window.addEventListener("orientationchange", function () {
+        document.body.style.zoom = "reset"; // For some Android browsers
+        window.scrollTo(0, 0); // Reset scroll position if needed
+      });
+    </script>
     <!-- 🌐 Language Selector Screen -->
     <div id="language-screen">
       <h1>Select Language</h1>
