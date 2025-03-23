@@ -12,3 +12,7 @@
     width: 100%;
   }
 }
+
+.top-header {
+  font-size: clamp(14px, 2.5vw, 20px);
+}
