@@ -1,0 +1,18 @@
+.top-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .top-header {
+    align-items: flex-start;
+    padding-left: 60px;
+    width: 100%;
+  }
+}
+
+.top-header {
+  font-size: clamp(14px, 2.5vw, 20px);
+}
