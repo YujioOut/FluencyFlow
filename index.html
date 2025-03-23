@@ -12,12 +12,6 @@
     />
   </head>
   <body>
-    <script>
-      window.addEventListener("orientationchange", function () {
-        document.body.style.zoom = "reset"; // For some Android browsers
-        window.scrollTo(0, 0); // Reset scroll position if needed
-      });
-    </script>
     <!-- 🌐 Language Selector Screen -->
     <div id="language-screen">
       <h1>Select Language</h1>
@@ -30,31 +24,34 @@
 
     <!-- 🌊 Main App Interface -->
     <div id="app" style="display: none">
-      <div class="top-header">
-        <h1>Fluency Flow</h1>
-        <div class="known-words-container">
-          <div class="known-words-label">Known Words</div>
-          <div id="known-count" class="known-words-highlight">0</div>
+      <div id="header-wrapper">
+        <div class="top-header">
+          <h1>Fluency Flow</h1>
+          <div class="known-words-container">
+            <div class="known-words-label">Known Words</div>
+            <div id="known-count" class="known-words-highlight">0</div>
+          </div>
+        </div>
+
+        <div id="theme-selector-container">
+          <select id="themeSelector" class="theme-selector">
+            <option value="sakura">Sakura</option>
+            <option value="dark">Dark</option>
+            <option value="cosmic">Quantum</option>
+            <option value="tactile">Tactile Warmth</option>
+            <option value="memory">Memory Palace</option>
+            <option value="ocean">Ocean Depths</option>
+            <option value="garden">Garden</option>
+            <option value="dream">Bubble</option>
+            <option value="crunch">Exam Crunch</option>
+            <option value="night">Night Reader</option>
+            <option value="focus">Focus</option>
+            <option value="retro">Retro</option>
+          </select>
+          <div class="page-counter">Page <span id="current-index"></span></div>
         </div>
       </div>
 
-      <div id="theme-selector-container">
-        <select id="themeSelector" class="theme-selector">
-          <option value="sakura">Sakura</option>
-          <option value="dark">Dark</option>
-          <option value="cosmic">Quantum</option>
-          <option value="tactile">Tactile Warmth</option>
-          <option value="memory">Memory Palace</option>
-          <option value="ocean">Ocean Depths</option>
-          <option value="garden">Garden</option>
-          <option value="dream">Bubble</option>
-          <option value="crunch">Exam Crunch</option>
-          <option value="night">Night Reader</option>
-          <option value="focus">Focus</option>
-          <option value="retro">Retro</option>
-        </select>
-        <div class="page-counter">Page <span id="current-index"></span></div>
-      </div>
       <div
         id="video-container"
         style="display: none; margin: 20px auto; max-width: 900px"
