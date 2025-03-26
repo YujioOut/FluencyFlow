@@ -25,20 +25,8 @@
 }
 
 @media (max-width: 600px) {
-  #header-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px;
-    width: 100%;
-    box-sizing: border-box;
-    flex-wrap: nowrap;
-    overflow-x: hidden;
-  }
-
-  .top-header,
-  #page-number-container {
-    transform: scale(0.8); /* ~20% smaller */
-    transform-origin: center;
+  .top-header {
+    transform: scale(1); /* ~20% smaller */
+    margin-left: -40px;
   }
 }
