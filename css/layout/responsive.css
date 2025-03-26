@@ -1,32 +1,10 @@
-@media screen and (max-width: 768px) {
-  button {
-    width: 100%;
-  }
-
-  select {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  #known-count-container {
-    font-size: 18px;
-    padding: 10px 16px;
-  }
-
-  #known-count {
-    font-size: 22px;
-  }
-
-  .top-header {
-    align-items: flex-start;
-    padding-left: 60px;
-    width: 100%;
-  }
-}
-
 @media (max-width: 600px) {
   .top-header {
-    transform: scale(1); /* ~20% smaller */
-    margin-left: -40px;
+    transform: scale(.95)); /* ~20% smaller */
+    margin-left: 12px;
+  }
+  .joy {
+    transform: scale(0.8);
+    margin-right: 4px;
   }
 }
