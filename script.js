@@ -102,11 +102,12 @@ function initFluencyFlow(language) {
       "https://www.youtube.com/embed/5ZmgiEcfN7U",
       "https://www.youtube.com/embed/w9m6bPczqoc",
       "https://www.youtube.com/embed/4TvMvpVg0Z4?si=wsP1NmtfkinWRZyS",
+      "https://www.youtube.com/embed/yb6R23cKPy4?si=zE6m4__VwMA1AkSi",
     ];
 
     const page = Math.floor(displayStartIndex / 100);
 
-    if (page >= 0 && page <= 2) {
+    if (page >= 0 && page <= 3) {
       videoContainer.innerHTML = `
        
         <iframe width="100%" height="200"
