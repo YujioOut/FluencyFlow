@@ -14,5 +14,5 @@
 }
 
 .top-header {
-  font-size: clamp(14px, 2.5vw, 20px);
+  font-size: clamp(12px, 2.5vw, 20px);
 }

@@ -1,6 +1,5 @@
 /* 🖥️ Theme Selector (Moves to Top Right) */
 #theme-selector-container {
-  position: absolute;
   top: 12px;
   right: 12px;
   z-index: 100;
