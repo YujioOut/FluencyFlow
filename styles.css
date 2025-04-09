@@ -14,21 +14,3 @@
 @import url("./css/components/theme-selector.css");
 @import url("./css/components/page-counter.css");
 @import url("./css/components/video.css");
-
-@media screen and (max-width: 480px) {
-  #header-wrapper {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .top-header,
-  #page-number-container {
-    width: 100%;
-  }
-
-  #page-number-container {
-    text-align: left;
-    font-size: 18px;
-    padding: 6px 10px;
-  }
-}
